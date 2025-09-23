@@ -6,20 +6,16 @@ import { Smartphone, Download, Play, FileText, Wifi, Clock, Coffee, Moon, Star, 
 const MobileAppSection = () => {
   const features = [{
     icon: Play,
-    title: 'Recorded classes available',
-    description: 'Never miss a session — every class is recorded and stored in your LMS/App'
-  }, {
-    icon: Zap,
-    title: 'Real-time Q&A sessions',
-    description: 'Interact with trainers during live sessions and clarify doubts instantly'
-  }, {
-    icon: Users,
-    title: 'Industry-expert trainers',
-    description: 'Learn from certified professionals with hands-on Oracle Fusion experience'
+    title: 'Watch Live/Recorded Classes',
+    description: 'Stream high-quality video sessions anywhere'
   }, {
     icon: FileText,
-    title: 'Module-wise structured learning',
-    description: 'Each topic taught step-by-step, building toward complete mastery'
+    title: 'Download PDFs & Quizzes',
+    description: 'Access study materials offline anytime'
+  }, {
+    icon: Wifi,
+    title: 'Offline Learning',
+    description: 'Download videos through our app and learn offline anytime.'
   }];
   const useCases = [{
     icon: Coffee,
