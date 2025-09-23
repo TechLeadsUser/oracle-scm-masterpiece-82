@@ -5,19 +5,6 @@ import { Users, GraduationCap, Code, TrendingUp, Clock, Target } from 'lucide-re
 const AudienceSection = () => {
   const audiences = [
     {
-      icon: Users,
-      title: 'Working Professionals',
-      subtitle: 'Transition to IT with no coding background',
-      description: 'Perfect for professionals from any domain looking to switch to high-paying Oracle careers',
-      benefits: [
-        'No technical background required',
-        'Learn while working your current job',
-        'Weekend and evening batches available',
-        'Average salary increase: 150-300%'
-      ],
-      color: 'primary'
-    },
-    {
       icon: GraduationCap,
       title: 'Fresh Graduates',
       subtitle: 'Get job-ready with in-demand skills',
@@ -42,6 +29,19 @@ const AudienceSection = () => {
         'Premium salary packages'
       ],
       color: 'accent'
+    },
+    {
+      icon: Users,
+      title: 'Working Professionals',
+      subtitle: 'Transition to IT with no coding background',
+      description: 'Perfect for professionals from any domain looking to switch to high-paying Oracle careers',
+      benefits: [
+        'No technical background required',
+        'Learn while working your current job',
+        'Weekend and evening batches available',
+        'Average salary increase: 150-300%'
+      ],
+      color: 'primary'
     }
   ];
 
