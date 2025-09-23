@@ -163,13 +163,22 @@ const MobileAppSection = () => {
               </div>
               
               <div className="mt-6 space-y-4">
-                <Button className="btn-cta w-full">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download Mobile App
-                </Button>
-                <p className="text-xs text-muted-foreground">
-                  Available on iOS and Android
-                </p>
+                <div className="flex flex-col gap-3">
+                  <a href="#" className="block hover:opacity-80 transition-opacity">
+                    <img 
+                      src="/src/assets/google-play-badge.png" 
+                      alt="Get it on Google Play" 
+                      className="h-12 w-auto mx-auto"
+                    />
+                  </a>
+                  <a href="#" className="block hover:opacity-80 transition-opacity">
+                    <img 
+                      src="/src/assets/app-store-badge.png" 
+                      alt="Download on the App Store" 
+                      className="h-12 w-auto mx-auto"
+                    />
+                  </a>
+                </div>
               </div>
             </Card>
           </div>
