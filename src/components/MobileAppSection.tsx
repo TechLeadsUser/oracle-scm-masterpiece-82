@@ -14,7 +14,7 @@ const MobileAppSection = () => {
     description: 'Access study materials offline anytime'
   }, {
     icon: Wifi,
-    title: 'Offline Mode',
+    title: 'Offline Learning',
     description: 'Continue learning without internet connection'
   }];
   const useCases = [{
