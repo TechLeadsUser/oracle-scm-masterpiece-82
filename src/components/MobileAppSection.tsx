@@ -18,21 +18,21 @@ const MobileAppSection = () => {
     description: 'Download videos through our app and learn offline anytime.'
   }];
   const useCases = [{
-    icon: Coffee,
-    title: 'Learn during commute',
-    description: 'Make your travel time productive'
+    icon: Play,
+    title: 'Recorded classes available',
+    description: 'Every class is recorded and stored in your LMS/App'
   }, {
-    icon: Clock,
-    title: 'Lunch break sessions',
-    description: 'Quick 15-30 minute learning modules'
+    icon: Zap,
+    title: 'Real-time Q&A sessions',
+    description: 'Interact live with trainers and clarify doubts instantly'
   }, {
-    icon: Clock,
-    title: 'Weekend deep dives',
-    description: 'Intensive study sessions at your pace'
+    icon: Users,
+    title: 'Industry-expert trainers',
+    description: 'Learn from certified professionals with real-world Oracle Fusion experience'
   }, {
-    icon: Moon,
-    title: 'Night shift friendly',
-    description: 'Learn when it works for your schedule'
+    icon: FileText,
+    title: 'Module-wise structured learning',
+    description: 'Follow a clear, step-by-step path to complete mastery'
   }];
   const stats = [{
     number: '70%',
