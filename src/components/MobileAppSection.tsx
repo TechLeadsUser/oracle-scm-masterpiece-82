@@ -15,7 +15,7 @@ const MobileAppSection = () => {
   }, {
     icon: Wifi,
     title: 'Offline Learning',
-    description: 'Continue learning without internet connection'
+    description: 'Download videos through our app and learn offline anytime.'
   }];
   const useCases = [{
     icon: Coffee,
