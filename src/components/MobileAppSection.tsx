@@ -163,7 +163,7 @@ const MobileAppSection = () => {
               </div>
               
               <div className="mt-6 space-y-4">
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-row gap-3 justify-center">
                   <a href="#" className="block hover:opacity-80 transition-opacity">
                     <img 
                       src="/src/assets/google-play-badge.png" 
