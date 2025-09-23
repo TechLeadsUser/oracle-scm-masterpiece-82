@@ -179,6 +179,9 @@ const MobileAppSection = () => {
                     />
                   </a>
                 </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Available on iOS and Android
+                </p>
               </div>
             </Card>
           </div>
