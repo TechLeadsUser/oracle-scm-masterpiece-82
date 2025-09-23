@@ -2,71 +2,56 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { 
-  Smartphone, 
-  Download, 
-  Play, 
-  FileText, 
-  Wifi, 
-  Clock, 
-  Coffee, 
-  Moon,
-  Star,
-  Users,
-  Zap
-} from 'lucide-react';
-
+import { Smartphone, Download, Play, FileText, Wifi, Clock, Coffee, Moon, Star, Users, Zap } from 'lucide-react';
 const MobileAppSection = () => {
-  const features = [
-    {
-      icon: Play,
-      title: 'Watch Live/Recorded Classes',
-      description: 'Stream high-quality video sessions anywhere'
-    },
-    {
-      icon: FileText,
-      title: 'Download PDFs & Quizzes',
-      description: 'Access study materials offline anytime'
-    },
-    {
-      icon: Wifi,
-      title: 'Offline Mode',
-      description: 'Continue learning without internet connection'
-    }
-  ];
-
-  const useCases = [
-    {
-      icon: Coffee,
-      title: 'Learn during commute',
-      description: 'Make your travel time productive'
-    },
-    {
-      icon: Clock,
-      title: 'Lunch break sessions',
-      description: 'Quick 15-30 minute learning modules'
-    },
-    {
-      icon: Clock,
-      title: 'Weekend deep dives',
-      description: 'Intensive study sessions at your pace'
-    },
-    {
-      icon: Moon,
-      title: 'Night shift friendly',
-      description: 'Learn when it works for your schedule'
-    }
-  ];
-
-  const stats = [
-    { number: '70%', label: 'Students use mobile app', icon: Users },
-    { number: '4.8★', label: 'App store rating', icon: Star },
-    { number: '50K+', label: 'Total downloads', icon: Download },
-    { number: '24/7', label: 'Always accessible', icon: Clock }
-  ];
-
-  return (
-    <section className="section-padding bg-gradient-to-br from-background to-primary/5">
+  const features = [{
+    icon: Play,
+    title: 'Watch Live/Recorded Classes',
+    description: 'Stream high-quality video sessions anywhere'
+  }, {
+    icon: FileText,
+    title: 'Download PDFs & Quizzes',
+    description: 'Access study materials offline anytime'
+  }, {
+    icon: Wifi,
+    title: 'Offline Mode',
+    description: 'Continue learning without internet connection'
+  }];
+  const useCases = [{
+    icon: Coffee,
+    title: 'Learn during commute',
+    description: 'Make your travel time productive'
+  }, {
+    icon: Clock,
+    title: 'Lunch break sessions',
+    description: 'Quick 15-30 minute learning modules'
+  }, {
+    icon: Clock,
+    title: 'Weekend deep dives',
+    description: 'Intensive study sessions at your pace'
+  }, {
+    icon: Moon,
+    title: 'Night shift friendly',
+    description: 'Learn when it works for your schedule'
+  }];
+  const stats = [{
+    number: '70%',
+    label: 'Students use mobile app',
+    icon: Users
+  }, {
+    number: '4.8★',
+    label: 'App store rating',
+    icon: Star
+  }, {
+    number: '50K+',
+    label: 'Total downloads',
+    icon: Download
+  }, {
+    number: '24/7',
+    label: 'Always accessible',
+    icon: Clock
+  }];
+  return <section className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -85,9 +70,8 @@ const MobileAppSection = () => {
               <h3 className="text-2xl font-bold mb-6">App Features</h3>
               <div className="space-y-4">
                 {features.map((feature, index) => {
-                  const IconComponent = feature.icon;
-                  return (
-                    <div key={index} className="flex items-start gap-4 p-4 bg-gradient-card rounded-xl border border-primary/10">
+                const IconComponent = feature.icon;
+                return <div key={index} className="flex items-start gap-4 p-4 bg-gradient-card rounded-xl border border-primary/10">
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <IconComponent className="h-6 w-6 text-primary" />
                       </div>
@@ -95,9 +79,8 @@ const MobileAppSection = () => {
                         <h4 className="font-semibold mb-1">{feature.title}</h4>
                         <p className="text-sm text-muted-foreground">{feature.description}</p>
                       </div>
-                    </div>
-                  );
-                })}
+                    </div>;
+              })}
               </div>
             </div>
 
@@ -106,17 +89,15 @@ const MobileAppSection = () => {
               <h3 className="text-2xl font-bold mb-6">Perfect Learning Scenarios</h3>
               <div className="grid grid-cols-2 gap-4">
                 {useCases.map((useCase, index) => {
-                  const IconComponent = useCase.icon;
-                  return (
-                    <div key={index} className="text-center p-4 bg-secondary/5 rounded-xl border border-secondary/10">
+                const IconComponent = useCase.icon;
+                return <div key={index} className="text-center p-4 bg-secondary/5 rounded-xl border border-secondary/10">
                       <div className="flex justify-center mb-2">
                         <IconComponent className="h-6 w-6 text-secondary" />
                       </div>
                       <h4 className="font-semibold text-sm mb-1">{useCase.title}</h4>
                       <p className="text-xs text-muted-foreground">{useCase.description}</p>
-                    </div>
-                  );
-                })}
+                    </div>;
+              })}
               </div>
             </div>
           </div>
@@ -165,23 +146,13 @@ const MobileAppSection = () => {
               <div className="mt-6 space-y-4">
                 <div className="flex flex-row gap-3 justify-center">
                   <a href="#" className="block hover:opacity-80 transition-opacity">
-                    <img 
-                      src="/src/assets/google-play-badge.png" 
-                      alt="Get it on Google Play" 
-                      className="h-12 w-auto mx-auto"
-                    />
+                    <img src="/src/assets/google-play-badge.png" alt="Get it on Google Play" className="h-12 w-auto mx-auto" />
                   </a>
                   <a href="#" className="block hover:opacity-80 transition-opacity">
-                    <img 
-                      src="/src/assets/app-store-badge.png" 
-                      alt="Download on the App Store" 
-                      className="h-12 w-auto mx-auto"
-                    />
+                    <img src="/src/assets/app-store-badge.png" alt="Download on the App Store" className="h-12 w-auto mx-auto" />
                   </a>
                 </div>
-                <p className="text-xs text-muted-foreground mt-3">
-                  Available on iOS and Android
-                </p>
+                <p className="text-xs text-muted-foreground mt-3">Available on Android and IOS</p>
               </div>
             </Card>
           </div>
@@ -190,9 +161,8 @@ const MobileAppSection = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => {
-            const IconComponent = stat.icon;
-            return (
-              <Card key={index} className="card-feature text-center">
+          const IconComponent = stat.icon;
+          return <Card key={index} className="card-feature text-center">
                 <div className="flex justify-center mb-3">
                   <div className="p-3 bg-primary/10 rounded-full">
                     <IconComponent className="h-6 w-6 text-primary" />
@@ -200,9 +170,8 @@ const MobileAppSection = () => {
                 </div>
                 <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </Card>
-            );
-          })}
+              </Card>;
+        })}
         </div>
 
         {/* Bottom CTA */}
@@ -224,8 +193,6 @@ const MobileAppSection = () => {
           </div>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default MobileAppSection;
