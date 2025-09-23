@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark Theme - Based on Reference Images */
+    --background: 217 33% 8%; /* Deep Navy Blue */
+    --foreground: 0 0% 98%; /* White text */
+
+    --card: 217 33% 12%; /* Slightly lighter navy for cards */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 217 33% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Oracle Enterprise Dark Theme Colors */
+    --primary: 195 100% 50%; /* Bright Teal/Cyan */
+    --primary-foreground: 217 33% 8%;
+    --primary-glow: 195 100% 60%;
+
+    --secondary: 195 87% 45%; /* Darker Teal */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217 33% 15%; /* Dark muted areas */
+    --muted-foreground: 220 9% 65%; /* Lighter muted text */
+
+    --accent: 142 76% 56%; /* Success Green variant */
+    --accent-foreground: 0 0% 98%;
+
+    --success: 142 76% 46%; /* Brighter green for dark theme */
+    --success-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 33% 20%; /* Dark borders */
+    --input: 217 33% 15%; /* Dark input backgrounds */
+    --ring: 195 100% 50%; /* Teal focus rings */
+
+    --radius: 0.75rem;
+
+    /* Dark Theme Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217 33% 6%) 0%, hsl(217 33% 12%) 50%, hsl(195 100% 15%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(195 100% 50% / 0.08) 0%, hsl(217 33% 15% / 0.5) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(142 76% 46%) 0%, hsl(142 76% 56%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(142 76% 56%) 0%, hsl(142 76% 66%) 100%);
+
+    /* Dark Theme Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(195 100% 50% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Dark Theme Sidebar */
+    --sidebar-background: 217 33% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 217 33% 8%;
+    --sidebar-accent: 217 33% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 217 33% 20%;
+    --sidebar-ring: 195 100% 50%;
+  }
+
+  /* Light theme override (optional - keeping for compatibility) */
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 195 100% 60%;
+
+    --secondary: 195 87% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 142 76% 46%; /* Success Green variant */
+    --accent-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 195 100% 50%;
+
+    /* Light theme gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(195 87% 45%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(195 100% 50% / 0.05) 0%, hsl(217 33% 15% / 0.05) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 46%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(142 76% 46%) 0%, hsl(142 76% 56%) 100%);
+
+    --shadow-elegant: 0 10px 30px -10px hsl(195 100% 50% / 0.2);
+    --shadow-glow: 0 0 40px hsl(195 100% 60% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(195 100% 50% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 195 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Force dark theme by default */
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* CTA Button Variants */
+  .btn-cta {
+    @apply bg-gradient-to-r from-success to-success/90 hover:from-success/90 hover:to-success text-success-foreground font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  .btn-whatsapp {
+    @apply bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary/20 hover:border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg;
+  }
+
+  /* Card Variants - Dark Theme Optimized */
+  .card-gradient {
+    @apply bg-gradient-to-br from-card via-muted/20 to-primary/5 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .card-feature {
+    @apply bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-2 hover:border-primary/30;
+  }
+
+  .card-testimonial {
+    @apply bg-gradient-to-br from-muted/80 to-card/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:scale-105;
+  }
+
+  /* Text Effects */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .text-accent-gradient {
+    @apply bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent;
+  }
+
+  /* Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  /* Utility Classes */
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countdown-pulse {
+  0%, 100% {
+    transform: scale(1);
+    background: hsl(var(--success));
+  }
+  50% {
+    transform: scale(1.05);
+    background: hsl(var(--success) / 0.9);
+  }
+}
