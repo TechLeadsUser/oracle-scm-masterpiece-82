@@ -74,11 +74,9 @@ const LeadFormSection = () => {
               🎯 Limited Seats Available
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Reserve Your <span className="text-gradient">Free Demo Access</span>
+              Reserve Your <span className="text-gradient">Free Demo Now</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join 200+ professionals this month who secured their Oracle SCM career transformation
-            </p>
+            
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
