@@ -4,32 +4,27 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from '@/components/ui/switch';
 import { useToast } from '@/hooks/use-toast';
-import { 
-  Target, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Shield, 
-  CheckCircle,
-  Users,
-  MessageCircle
-} from 'lucide-react';
+import { Target, Phone, Mail, Clock, Shield, CheckCircle, Users, MessageCircle } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-
 const LeadFormSection = () => {
-  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
-  const { ref: formRef, isIntersecting: formVisible } = useIntersectionObserver();
-  const { ref: sidebarRef, isIntersecting: sidebarVisible } = useIntersectionObserver();
-  const { toast } = useToast();
+  const {
+    ref: headerRef,
+    isIntersecting: headerVisible
+  } = useIntersectionObserver();
+  const {
+    ref: formRef,
+    isIntersecting: formVisible
+  } = useIntersectionObserver();
+  const {
+    ref: sidebarRef,
+    isIntersecting: sidebarVisible
+  } = useIntersectionObserver();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -37,17 +32,9 @@ const LeadFormSection = () => {
     timeSlot: '',
     whatsappUpdates: true
   });
-
-  const timeSlots = [
-    'Morning (9 AM - 12 PM)',
-    'Afternoon (1 PM - 4 PM)', 
-    'Evening (5 PM - 8 PM)',
-    'Weekend Batch (Sat-Sun)'
-  ];
-
+  const timeSlots = ['Morning (9 AM - 12 PM)', 'Afternoon (1 PM - 4 PM)', 'Evening (5 PM - 8 PM)', 'Weekend Batch (Sat-Sun)'];
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.fullName || !formData.email || !formData.mobile || !formData.timeSlot) {
       toast({
         title: "Missing Information",
@@ -60,7 +47,7 @@ const LeadFormSection = () => {
     // Here you would typically send the data to your backend
     toast({
       title: "Seat Reserved Successfully! 🎉",
-      description: "Check your email for demo class details. WhatsApp reminder will be sent 30 minutes before class.",
+      description: "Check your email for demo class details. WhatsApp reminder will be sent 30 minutes before class."
     });
 
     // Reset form
@@ -72,25 +59,17 @@ const LeadFormSection = () => {
       whatsappUpdates: true
     });
   };
-
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
-
-  return (
-    <section className="section-padding bg-gradient-to-br from-background to-primary/5">
+  return <section className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div
-            ref={headerRef}
-            className={`text-center mb-12 transition-all duration-700 ${
-              headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div ref={headerRef} className={`text-center mb-12 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <Badge className="bg-success text-success-foreground mb-4 px-4 py-2">
               🎯 Limited Seats Available
             </Badge>
@@ -104,12 +83,7 @@ const LeadFormSection = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Form */}
-            <Card
-              ref={formRef}
-              className={`card-gradient transition-all duration-700 delay-300 ${
-                formVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-8 scale-95'
-              }`}
-            >
+            <Card ref={formRef} className={`card-gradient transition-all duration-700 delay-300 ${formVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-8 scale-95'}`}>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold mb-2">Free Demo Registration</h3>
@@ -123,15 +97,7 @@ const LeadFormSection = () => {
                   <Label htmlFor="fullName" className="flex items-center gap-2">
                     Full Name <span className="text-destructive">*</span>
                   </Label>
-                  <Input
-                    id="fullName"
-                    type="text"
-                    placeholder="Enter your full name"
-                    value={formData.fullName}
-                    onChange={(e) => handleInputChange('fullName', e.target.value)}
-                    className="h-12"
-                    required
-                  />
+                  <Input id="fullName" type="text" placeholder="Enter your full name" value={formData.fullName} onChange={e => handleInputChange('fullName', e.target.value)} className="h-12" required />
                 </div>
 
                 {/* Email Field */}
@@ -140,15 +106,7 @@ const LeadFormSection = () => {
                     <Mail className="h-4 w-4" />
                     Email Address <span className="text-destructive">*</span>
                   </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@company.com"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="h-12"
-                    required
-                  />
+                  <Input id="email" type="email" placeholder="your.email@company.com" value={formData.email} onChange={e => handleInputChange('email', e.target.value)} className="h-12" required />
                 </div>
 
                 {/* Mobile Field */}
@@ -157,15 +115,7 @@ const LeadFormSection = () => {
                     <Phone className="h-4 w-4" />
                     Mobile Number <span className="text-destructive">*</span>
                   </Label>
-                  <Input
-                    id="mobile"
-                    type="tel"
-                    placeholder="+91 XXXXX XXXXX"
-                    value={formData.mobile}
-                    onChange={(e) => handleInputChange('mobile', e.target.value)}
-                    className="h-12"
-                    required
-                  />
+                  <Input id="mobile" type="tel" placeholder="+91 XXXXX XXXXX" value={formData.mobile} onChange={e => handleInputChange('mobile', e.target.value)} className="h-12" required />
                 </div>
 
                 {/* Time Slot */}
@@ -174,33 +124,18 @@ const LeadFormSection = () => {
                     <Clock className="h-4 w-4" />
                     Preferred Time Slot <span className="text-destructive">*</span>
                   </Label>
-                  <Select 
-                    value={formData.timeSlot} 
-                    onValueChange={(value) => handleInputChange('timeSlot', value)}
-                  >
+                  <Select value={formData.timeSlot} onValueChange={value => handleInputChange('timeSlot', value)}>
                     <SelectTrigger className="h-12">
                       <SelectValue placeholder="Choose your convenient time" />
                     </SelectTrigger>
                     <SelectContent>
-                      {timeSlots.map((slot) => (
-                        <SelectItem key={slot} value={slot}>{slot}</SelectItem>
-                      ))}
+                      {timeSlots.map(slot => <SelectItem key={slot} value={slot}>{slot}</SelectItem>)}
                     </SelectContent>
                   </Select>
                 </div>
 
                 {/* WhatsApp Updates */}
-                <div className="flex items-center space-x-2">
-                  <Switch
-                    id="whatsapp"
-                    checked={formData.whatsappUpdates}
-                    onCheckedChange={(checked) => handleInputChange('whatsappUpdates', checked)}
-                  />
-                  <Label htmlFor="whatsapp" className="text-sm flex items-center gap-2">
-                    <MessageCircle className="h-4 w-4" />
-                    Send me WhatsApp updates and reminders
-                  </Label>
-                </div>
+                
 
                 {/* Submit Button */}
                 <Button type="submit" className="btn-cta w-full h-12 text-lg">
@@ -209,26 +144,12 @@ const LeadFormSection = () => {
                 </Button>
 
                 {/* Trust Indicators */}
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border/20">
-                  <Button variant="outline" className="h-10" type="button">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Call Us Now
-                  </Button>
-                  <Button variant="outline" className="h-10" type="button">
-                    <Mail className="mr-2 h-4 w-4" />
-                    Email Query
-                  </Button>
-                </div>
+                
               </form>
             </Card>
 
             {/* Benefits & Trust */}
-            <div
-              ref={sidebarRef}
-              className={`space-y-6 transition-all duration-700 delay-600 ${
-                sidebarVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-              }`}
-            >
+            <div ref={sidebarRef} className={`space-y-6 transition-all duration-700 delay-600 ${sidebarVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
               {/* What Happens Next */}
               <Card className="card-feature">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
@@ -306,8 +227,6 @@ const LeadFormSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LeadFormSection;
