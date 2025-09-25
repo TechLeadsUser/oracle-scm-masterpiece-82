@@ -92,7 +92,7 @@ const TrainerProfile = () => {
                   
                   <li>• 20+ years of expertise in Oracle ERP, specializing in Fusion SCM Training.</li>
                   <li>• Maintained 98% student satisfaction rate over 5 years</li>
-                  <li>• Successfully trained over 5,000 students in Oracle Cloud SCM course, empowering them to become skilled IT professionals.peSuccessfully trained over 5,000 students in Oracle Cloud SCM Course, empowering them to become skilled IT professionals.</li>
+                  <li>• Successfully trained over 5,000 students in Oracle Cloud SCM course, empowering them to become skilled IT professionals.</li>
                 </ul>
               </div>
             </div>
