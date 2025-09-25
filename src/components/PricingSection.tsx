@@ -3,7 +3,10 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Crown, Users, Play, Phone, Calendar, Shield, CreditCard, Zap } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const PricingSection = () => {
+  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+  
   const plans = [{
     name: 'Self-Paced Learning',
     price: '₹14,999',
@@ -38,9 +41,11 @@ const PricingSection = () => {
     buttonText: 'Request Quote',
     buttonVariant: 'hero'
   }];
-  return <section className="section-padding bg-gradient-to-br from-background to-primary/5">
+  return <section ref={ref} className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Simple, Transparent <span className="text-gradient">Pricing</span>
           </h2>
@@ -50,7 +55,9 @@ const PricingSection = () => {
         </div>
 
         {/* Key Points */}
-        <div className="grid md:grid-cols-3 gap-4 mb-12">
+        <div className={`grid md:grid-cols-3 gap-4 mb-12 transition-all duration-1000 delay-300 ${
+          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="flex items-center gap-3 p-4 bg-success/5 rounded-xl border border-success/10">
             <Calendar className="h-6 w-6 text-success" />
             <span className="font-medium">Pay after 3-day free access</span>
@@ -73,8 +80,9 @@ const PricingSection = () => {
           return <Card key={index} className={`
                 ${isPopular ? 'border-success/50 shadow-glow scale-105' : 'border-border/20'} 
                 ${isEnterprise ? 'border-primary/50' : ''}
-                card-gradient relative group hover:scale-105 transition-all duration-300
-              `}>
+                card-gradient relative group hover:scale-105 transition-all duration-1000
+                ${isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'}
+              `} style={{ animationDelay: `${600 + index * 200}ms` }}>
                 {/* Badge */}
                 {plan.badge && <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <Badge className={`

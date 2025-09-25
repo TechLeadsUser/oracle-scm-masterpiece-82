@@ -13,8 +13,11 @@ import {
   Users,
   Award
 } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const BenefitsSection = () => {
+  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+  
   const benefits = [
     {
       icon: Play,
@@ -55,9 +58,11 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-background to-primary/5">
+    <section ref={ref} className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Why Attend This <span className="text-gradient">Demo?</span>
           </h2>
@@ -78,7 +83,9 @@ const BenefitsSection = () => {
             };
 
             return (
-              <Card key={index} className="card-feature group hover:scale-105">
+              <Card key={index} className={`card-feature group hover:scale-105 transition-all duration-1000 ${
+                isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+              }`} style={{ animationDelay: `${index * 150}ms` }}>
                 <div className="text-center">
                   <div className={`inline-flex p-4 rounded-2xl mb-4 ${colorClasses[benefit.color]} group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="h-8 w-8" />
@@ -92,7 +99,9 @@ const BenefitsSection = () => {
         </div>
 
         {/* Value Proposition Card */}
-        <Card className="card-gradient">
+        <Card className={`card-gradient transition-all duration-1000 delay-900 ${
+          isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
+        }`}>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center gap-2 mb-4">

@@ -8,8 +8,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { MessageCircle, HelpCircle } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const FAQSection = () => {
+  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+  
   const faqs = [
     {
       question: "Will I get access to class recordings?",
@@ -46,9 +49,11 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-background to-primary/5">
+    <section ref={ref} className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Frequently Asked <span className="text-gradient">Questions</span>
           </h2>
@@ -58,7 +63,9 @@ const FAQSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="card-gradient p-8">
+          <Card className={`card-gradient p-8 transition-all duration-1000 delay-300 ${
+            isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
+          }`}>
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
                 <AccordionItem 
@@ -84,7 +91,9 @@ const FAQSection = () => {
 
           {/* Still Have Questions CTA */}
           <div className="text-center mt-12">
-            <Card className="card-gradient inline-block p-6 max-w-2xl">
+            <Card className={`card-gradient inline-block p-6 max-w-2xl transition-all duration-1000 delay-600 ${
+              isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
+            }`}>
               <h3 className="text-xl font-bold mb-2">Still Have Questions?</h3>
               <p className="text-muted-foreground mb-4">
                 Our expert counselors are available to address all your concerns personally

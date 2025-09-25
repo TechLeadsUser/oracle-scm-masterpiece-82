@@ -3,8 +3,10 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Star, TrendingUp, MapPin, Quote } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const TestimonialsSection = () => {
+  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
@@ -75,9 +77,11 @@ const TestimonialsSection = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-background to-primary/5">
+    <section ref={ref} className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             The Voice of Our <span className="text-gradient">Learners</span>
           </h2>
@@ -96,7 +100,9 @@ const TestimonialsSection = () => {
             };
             
             return (
-              <Card key={index} className={`text-center p-6 ${colorClasses[stat.color]} border-2`}>
+              <Card key={index} className={`text-center p-6 ${colorClasses[stat.color]} border-2 transition-all duration-1000 ${
+                isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+              }`} style={{ animationDelay: `${300 + index * 100}ms` }}>
                 <div className="text-3xl font-bold mb-2">{stat.number}</div>
                 <div className="text-sm font-medium">{stat.label}</div>
               </Card>
@@ -105,7 +111,9 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Main Testimonial */}
-        <Card className="card-gradient mb-8">
+        <Card className={`card-gradient mb-8 transition-all duration-1000 delay-600 ${
+          isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
+        }`}>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Student Info */}
             <div className="text-center">
@@ -220,7 +228,9 @@ const TestimonialsSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-12">
-          <Card className="card-gradient inline-block p-6 max-w-2xl">
+          <Card className={`card-gradient inline-block p-6 max-w-2xl transition-all duration-1000 delay-900 ${
+            isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
+          }`}>
             <h3 className="text-xl font-bold mb-2">Ready to Write Your Success Story?</h3>
             <p className="text-muted-foreground mb-4">
               Join our next batch and become part of our successful alumni network

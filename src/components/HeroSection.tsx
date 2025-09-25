@@ -4,15 +4,20 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, Users, Award, MessageCircle, Target } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
 import heroTraining from '@/assets/hero-training.jpg';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const HeroSection = () => {
-  return <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/10">
+  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.1 });
+  
+  return <section ref={ref} className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/10">
       <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(195_100%_50%_/_0.1),transparent_50%)]"></div>
       
       <div className="container-wide section-padding relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className={`space-y-8 transition-all duration-1000 ${
+            isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+          }`}>
             {/* Badge */}
             <Badge className="bg-gradient-cta text-success-foreground px-4 py-2 text-sm font-semibold animate-slide-up">
               🎓 Free Demo + 2-Day Classes
@@ -59,7 +64,9 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Hero Image */}
-          <div className="relative">
+          <div className={`relative transition-all duration-1000 delay-300 ${
+            isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
+          }`}>
             <div className="relative rounded-2xl overflow-hidden shadow-glow border border-primary/20">
               <img src={heroTraining} alt="Oracle Fusion SCM Training - Interactive live sessions with expert guidance" className="w-full h-[500px] object-cover" />
               

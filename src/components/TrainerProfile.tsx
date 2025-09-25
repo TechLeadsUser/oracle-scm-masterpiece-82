@@ -3,8 +3,11 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Users, Briefcase, Award, Quote } from 'lucide-react';
 import trainerImage from '@/assets/trainer-anil.jpg';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const TrainerProfile = () => {
+  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+  
   const companies = ['Oracle', 'Capgemini', 'Infosys', 'TCS'];
   const certifications = [
     'Oracle Cloud SCM',
@@ -14,9 +17,11 @@ const TrainerProfile = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-muted/30 to-background">
+    <section ref={ref} className="section-padding bg-gradient-to-br from-muted/30 to-background">
       <div className="container-wide">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Meet Your Expert <span className="text-gradient">Trainer</span>
           </h2>
@@ -25,7 +30,9 @@ const TrainerProfile = () => {
           </p>
         </div>
 
-        <Card className="card-gradient max-w-4xl mx-auto">
+        <Card className={`card-gradient max-w-4xl mx-auto transition-all duration-1000 delay-300 ${
+          isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
+        }`}>
           <div className="grid md:grid-cols-3 gap-8 items-start">
             {/* Trainer Image */}
             <div className="md:col-span-1 text-center">
