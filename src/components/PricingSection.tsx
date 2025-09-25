@@ -96,7 +96,7 @@ const PricingSection = () => {
                       </div>}
                     <div className="text-3xl font-bold text-primary">
                       {plan.price}
-                      {plan.type === 'live' && <span className="text-sm text-muted-foreground">/course</span>}
+                      {plan.type === 'live'}
                     </div>
                   </div>
                 </div>
