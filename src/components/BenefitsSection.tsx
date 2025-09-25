@@ -1,73 +1,55 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Play, 
-  Clock, 
-  Smartphone, 
-  FileText, 
-  Briefcase, 
-  Target, 
-  CheckCircle, 
-  Shield,
-  Users,
-  Award
-} from 'lucide-react';
+import { Play, Clock, Smartphone, FileText, Briefcase, Target, CheckCircle, Shield, Users, Award } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-
 const BenefitsSection = () => {
-  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
-  const { ref: benefitsRef, isIntersecting: benefitsVisible } = useIntersectionObserver();
-  const { ref: valueRef, isIntersecting: valueVisible } = useIntersectionObserver();
-  
-  const benefits = [
-    {
-      icon: Play,
-      title: 'Live Experience',
-      description: 'Interactive sessions with real-time doubt clearing',
-      color: 'primary'
-    },
-    {
-      icon: Clock,
-      title: '80 hrs Learning',
-      description: 'Comprehensive curriculum covering all SCM modules',
-      color: 'secondary'
-    },
-    {
-      icon: Smartphone,
-      title: 'LMS for Learning',
-      description: 'Advanced learning management system with tracking',
-      color: 'success'
-    },
-    {
-      icon: Smartphone,
-      title: 'Mobile App',
-      description: 'Learn on-the-go with our dedicated mobile application',
-      color: 'success'
-    },
-    {
-      icon: FileText,
-      title: 'Resume Tips',
-      description: 'Professional resume building and interview preparation',
-      color: 'primary'
-    },
-    {
-      icon: Briefcase,
-      title: 'Placement Support',
-      description: 'Dedicated placement assistance with job guarantees',
-      color: 'secondary'
-    }
-  ];
-
-  return (
-    <section className="section-padding bg-gradient-to-br from-background to-primary/5">
+  const {
+    ref: headerRef,
+    isIntersecting: headerVisible
+  } = useIntersectionObserver();
+  const {
+    ref: benefitsRef,
+    isIntersecting: benefitsVisible
+  } = useIntersectionObserver();
+  const {
+    ref: valueRef,
+    isIntersecting: valueVisible
+  } = useIntersectionObserver();
+  const benefits = [{
+    icon: Play,
+    title: 'Live Experience',
+    description: 'Interactive sessions with real-time doubt clearing',
+    color: 'primary'
+  }, {
+    icon: Clock,
+    title: '80 hrs Learning',
+    description: 'Comprehensive curriculum covering all SCM modules',
+    color: 'secondary'
+  }, {
+    icon: Smartphone,
+    title: 'LMS for Learning',
+    description: 'Advanced learning management system with tracking',
+    color: 'success'
+  }, {
+    icon: Smartphone,
+    title: 'Mobile App',
+    description: 'Learn on-the-go with our dedicated mobile application',
+    color: 'success'
+  }, {
+    icon: FileText,
+    title: 'Resume Tips',
+    description: 'Professional resume building and interview preparation',
+    color: 'primary'
+  }, {
+    icon: Briefcase,
+    title: 'Placement Support',
+    description: 'Dedicated placement assistance with job guarantees',
+    color: 'secondary'
+  }];
+  return <section className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
-        <div
-          ref={headerRef}
-          className={`text-center mb-12 transition-all duration-700 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={headerRef} className={`text-center mb-12 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Why Attend This <span className="text-gradient">Demo?</span>
           </h2>
@@ -77,27 +59,18 @@ const BenefitsSection = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div
-          ref={benefitsRef}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-        >
+        <div ref={benefitsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {benefits.map((benefit, index) => {
-            const IconComponent = benefit.icon;
-            const colorClasses = {
-              primary: 'text-primary bg-primary/10',
-              secondary: 'text-secondary bg-secondary/10',
-              accent: 'text-accent bg-accent/10',
-              success: 'text-success bg-success/10'
-            };
-
-            return (
-              <Card
-                key={index}
-                className={`card-feature group hover:scale-105 transition-all duration-700 ${
-                  benefitsVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
-              >
+          const IconComponent = benefit.icon;
+          const colorClasses = {
+            primary: 'text-primary bg-primary/10',
+            secondary: 'text-secondary bg-secondary/10',
+            accent: 'text-accent bg-accent/10',
+            success: 'text-success bg-success/10'
+          };
+          return <Card key={index} className={`card-feature group hover:scale-105 transition-all duration-700 ${benefitsVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`} style={{
+            transitionDelay: `${index * 150}ms`
+          }}>
                 <div className="text-center">
                   <div className={`inline-flex p-4 rounded-2xl mb-4 ${colorClasses[benefit.color]} group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="h-8 w-8" />
@@ -105,24 +78,15 @@ const BenefitsSection = () => {
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                   <p className="text-muted-foreground">{benefit.description}</p>
                 </div>
-              </Card>
-            );
-          })}
+              </Card>;
+        })}
         </div>
 
         {/* Value Proposition Card */}
-        <Card
-          ref={valueRef}
-          className={`card-gradient transition-all duration-700 delay-900 ${
-            valueVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
-          }`}
-        >
+        <Card ref={valueRef} className={`card-gradient transition-all duration-700 delay-900 ${valueVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Target className="h-6 w-6 text-primary" />
-                <Badge className="bg-primary text-primary-foreground">🎯 Make an Informed Decision</Badge>
-              </div>
+              
               
               <h3 className="text-2xl font-bold mb-4">
                 No Hidden Costs, No Pressure Sales
@@ -155,14 +119,12 @@ const BenefitsSection = () => {
 
             <div className="space-y-4">
               <div className="bg-gradient-card p-6 rounded-xl border border-primary/10">
-                <h4 className="font-bold text-lg mb-2 text-center">What Students Say</h4>
+                
                 <div className="text-center space-y-2">
                   <div className="text-3xl font-bold text-primary">4.9/5</div>
                   <div className="text-sm text-muted-foreground">Average Rating</div>
                   <div className="flex justify-center">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-yellow-400 text-lg">★</span>
-                    ))}
+                    {[...Array(5)].map((_, i) => <span key={i} className="text-yellow-400 text-lg">★</span>)}
                   </div>
                 </div>
               </div>
@@ -173,7 +135,7 @@ const BenefitsSection = () => {
                   <div className="text-xs text-muted-foreground">Placement Rate</div>
                 </div>
                 <div className="text-center p-4 bg-primary/5 rounded-xl border border-primary/10">
-                  <div className="text-2xl font-bold text-primary">₹6.2L</div>
+                  <div className="text-2xl font-bold text-primary">₹3-6L</div>
                   <div className="text-xs text-muted-foreground">Avg. Salary</div>
                 </div>
               </div>
@@ -181,8 +143,6 @@ const BenefitsSection = () => {
           </div>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default BenefitsSection;
