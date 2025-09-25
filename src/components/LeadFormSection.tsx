@@ -163,15 +163,15 @@ const LeadFormSection = () => {
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center text-xs font-bold text-secondary">2</div>
                     <div>
-                      <div className="font-medium">Pre-Demo Material</div>
-                      <div className="text-sm text-muted-foreground">Receive Oracle basics PDF and session agenda</div>
+                      <div className="font-medium">Program Overview </div>
+                      <div className="text-sm text-muted-foreground">Program Overview – Get a complete outline of our curriculum and training structure</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-success/10 rounded-full flex items-center justify-center text-xs font-bold text-success">3</div>
                     <div>
                       <div className="font-medium">Reminder & Support</div>
-                      <div className="text-sm text-muted-foreground">WhatsApp reminder 30 mins before class starts</div>
+                      <div className="text-sm text-muted-foreground">WhatsApp reminders before class starts</div>
                     </div>
                   </div>
                 </div>
