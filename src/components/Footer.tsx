@@ -1,70 +1,63 @@
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  MessageCircle, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Youtube, 
-  Instagram,
-  Award,
-  Shield,
-  Users
-} from 'lucide-react';
-
+import { Mail, Phone, MapPin, MessageCircle, Facebook, Twitter, Linkedin, Youtube, Instagram, Award, Shield, Users } from 'lucide-react';
 const Footer = () => {
-  const quickLinks = [
-    { name: 'Free Demo', href: '#demo' },
-    { name: 'Meet Trainer', href: '#trainer' },
-    { name: 'Schedule', href: '#schedule' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'FAQ', href: '#faq' }
-  ];
-
-  const oracleModules = [
-    'Oracle Fusion SCM',
-    'Procurement Cloud',
-    'Inventory Management',
-    'Order Management',
-    'Manufacturing Cloud',
-    'Supply Planning',
-    'Logistics Management',
-    'Cost Management'
-  ];
-
-  const certifications = [
-    {
-      name: 'Oracle Certified Partner',
-      icon: Award,
-      color: 'text-success'
-    },
-    {
-      name: 'ISO 9001:2015 Certified',
-      icon: Shield,
-      color: 'text-primary'
-    },
-    {
-      name: 'NASSCOM Member',
-      icon: Users,
-      color: 'text-primary'
-    }
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-    { icon: Instagram, href: '#', label: 'Instagram' }
-  ];
-
-  return (
-    <footer className="bg-gradient-to-br from-background to-primary/5 border-t border-primary/20">
+  const quickLinks = [{
+    name: 'Free Demo',
+    href: '#demo'
+  }, {
+    name: 'Meet Trainer',
+    href: '#trainer'
+  }, {
+    name: 'Schedule',
+    href: '#schedule'
+  }, {
+    name: 'Pricing',
+    href: '#pricing'
+  }, {
+    name: 'Testimonials',
+    href: '#testimonials'
+  }, {
+    name: 'FAQ',
+    href: '#faq'
+  }];
+  const oracleModules = ['Oracle Fusion SCM', 'Procurement Cloud', 'Inventory Management', 'Order Management', 'Manufacturing Cloud', 'Supply Planning', 'Logistics Management', 'Cost Management'];
+  const certifications = [{
+    name: 'Oracle Certified Partner',
+    icon: Award,
+    color: 'text-success'
+  }, {
+    name: 'ISO 9001:2015 Certified',
+    icon: Shield,
+    color: 'text-primary'
+  }, {
+    name: 'NASSCOM Member',
+    icon: Users,
+    color: 'text-primary'
+  }];
+  const socialLinks = [{
+    icon: Facebook,
+    href: '#',
+    label: 'Facebook'
+  }, {
+    icon: Twitter,
+    href: '#',
+    label: 'Twitter'
+  }, {
+    icon: Linkedin,
+    href: '#',
+    label: 'LinkedIn'
+  }, {
+    icon: Youtube,
+    href: '#',
+    label: 'YouTube'
+  }, {
+    icon: Instagram,
+    href: '#',
+    label: 'Instagram'
+  }];
+  return <footer className="bg-gradient-to-br from-background to-primary/5 border-t border-primary/20">
       <div className="container-wide py-16">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -83,19 +76,11 @@ const Footer = () => {
               <h4 className="font-semibold mb-3">Follow Us</h4>
               <div className="flex gap-3">
                 {socialLinks.map((social, index) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <Button
-                      key={index}
-                      variant="outline"
-                      size="sm"
-                      className="w-10 h-10 p-0 hover:bg-primary hover:text-primary-foreground hover:border-primary"
-                      aria-label={social.label}
-                    >
+                const IconComponent = social.icon;
+                return <Button key={index} variant="outline" size="sm" className="w-10 h-10 p-0 hover:bg-primary hover:text-primary-foreground hover:border-primary" aria-label={social.label}>
                       <IconComponent className="h-4 w-4" />
-                    </Button>
-                  );
-                })}
+                    </Button>;
+              })}
               </div>
             </div>
 
@@ -116,15 +101,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Quick Links</h4>
             <div className="space-y-2">
-              {quickLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="block text-muted-foreground hover:text-primary transition-colors duration-200 text-sm py-1"
-                >
+              {quickLinks.map((link, index) => <a key={index} href={link.href} className="block text-muted-foreground hover:text-primary transition-colors duration-200 text-sm py-1">
                   {link.name}
-                </a>
-              ))}
+                </a>)}
             </div>
 
             <div className="mt-6">
@@ -139,12 +118,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Oracle SCM Modules</h4>
             <div className="space-y-2">
-              {oracleModules.map((module, index) => (
-                <div key={index} className="flex items-center gap-2">
+              {oracleModules.map((module, index) => <div key={index} className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
                   <span className="text-muted-foreground text-sm">{module}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
@@ -196,14 +173,12 @@ const Footer = () => {
           <h4 className="font-bold text-center mb-6">Our Certifications & Memberships</h4>
           <div className="flex flex-wrap justify-center items-center gap-6">
             {certifications.map((cert, index) => {
-              const IconComponent = cert.icon;
-              return (
-                <Badge key={index} variant="outline" className={`px-4 py-2 ${cert.color} border-current`}>
+            const IconComponent = cert.icon;
+            return <Badge key={index} variant="outline" className={`px-4 py-2 ${cert.color} border-current`}>
                   <IconComponent className="mr-2 h-4 w-4" />
                   {cert.name}
-                </Badge>
-              );
-            })}
+                </Badge>;
+          })}
           </div>
         </div>
 
@@ -233,13 +208,7 @@ const Footer = () => {
       </div>
 
       {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button className="btn-whatsapp rounded-full w-14 h-14 p-0 shadow-glow animate-pulse-soft">
-          <MessageCircle className="h-6 w-6" />
-        </Button>
-      </div>
-    </footer>
-  );
+      
+    </footer>;
 };
-
 export default Footer;
