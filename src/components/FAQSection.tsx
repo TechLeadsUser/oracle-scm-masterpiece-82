@@ -82,16 +82,14 @@ const FAQSection = () => {
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Chat via WhatsApp
                 </Button>
-                <div className="text-sm text-muted-foreground flex items-center justify-center">
-                  <span>Response time: &lt; 5 minutes</span>
-                </div>
+                
               </div>
               
               <div className="mt-4 pt-4 border-t border-border/20">
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
                     <div className="font-semibold">Career Counseling</div>
-                    <div className="text-muted-foreground">Mon-Sat, 9 AM - 8 PM</div>
+                    <div className="text-muted-foreground">Mon-Sat, 09:30 AM - 07:00 PM</div>
                   </div>
                   <div>
                     <div className="font-semibold">Technical Support</div>
