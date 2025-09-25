@@ -3,7 +3,14 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Smartphone, Download, Play, FileText, Wifi, Clock, Coffee, Moon, Star, Users, Zap } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const MobileAppSection = () => {
+  // Animation refs
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: contentRef, isIntersecting: contentVisible } = useIntersectionObserver();
+  const { ref: phoneRef, isIntersecting: phoneVisible } = useIntersectionObserver();
+  const { ref: statsRef, isIntersecting: statsVisible } = useIntersectionObserver();
+  const { ref: ctaRef, isIntersecting: ctaVisible } = useIntersectionObserver();
   const features = [{
     icon: Play,
     title: 'Watch Live/Recorded Classes',
@@ -53,7 +60,14 @@ const MobileAppSection = () => {
   }];
   return <section className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
-        <div className="text-center mb-12">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-12 transition-all duration-700 ${
+            headerVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Learn Anywhere with our <span className="text-gradient">Mobile App</span>
           </h2>
@@ -64,14 +78,29 @@ const MobileAppSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div 
+            ref={contentRef}
+            className={`space-y-8 transition-all duration-700 delay-200 ${
+              contentVisible 
+                ? 'opacity-100 translate-x-0' 
+                : 'opacity-0 -translate-x-8'
+            }`}
+          >
             {/* Features */}
             <div>
               <h3 className="text-2xl font-bold mb-6">App Features</h3>
               <div className="space-y-4">
                 {features.map((feature, index) => {
                 const IconComponent = feature.icon;
-                return <div key={index} className="flex items-start gap-4 p-4 bg-gradient-card rounded-xl border border-primary/10">
+                return <div 
+                  key={index} 
+                  className={`flex items-start gap-4 p-4 bg-gradient-card rounded-xl border border-primary/10 transition-all duration-500 hover-scale ${
+                    contentVisible 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-4'
+                  }`}
+                  style={{ transitionDelay: `${400 + index * 100}ms` }}
+                >
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <IconComponent className="h-6 w-6 text-primary" />
                       </div>
@@ -90,7 +119,15 @@ const MobileAppSection = () => {
               <div className="grid grid-cols-2 gap-4">
                 {useCases.map((useCase, index) => {
                 const IconComponent = useCase.icon;
-                return <div key={index} className="text-center p-4 bg-secondary/5 rounded-xl border border-secondary/10">
+                return <div 
+                  key={index} 
+                  className={`text-center p-4 bg-secondary/5 rounded-xl border border-secondary/10 transition-all duration-500 hover-scale ${
+                    contentVisible 
+                      ? 'opacity-100 scale-100' 
+                      : 'opacity-0 scale-95'
+                  }`}
+                  style={{ transitionDelay: `${700 + index * 100}ms` }}
+                >
                       <div className="flex justify-center mb-2">
                         <IconComponent className="h-6 w-6 text-secondary" />
                       </div>
@@ -103,7 +140,14 @@ const MobileAppSection = () => {
           </div>
 
           {/* Right Content - Phone Mockup */}
-          <div className="relative">
+          <div 
+            ref={phoneRef}
+            className={`relative transition-all duration-700 delay-300 ${
+              phoneVisible 
+                ? 'opacity-100 translate-x-0 scale-100' 
+                : 'opacity-0 translate-x-8 scale-95'
+            }`}
+          >
             <Card className="card-gradient p-8 text-center">
               <div className="relative mx-auto w-64 h-96 bg-gradient-to-b from-primary/10 to-secondary/10 rounded-3xl border-8 border-muted/20 shadow-elegant">
                 {/* Phone Screen */}
@@ -159,10 +203,25 @@ const MobileAppSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div 
+          ref={statsRef}
+          className={`grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 ${
+            statsVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           {stats.map((stat, index) => {
           const IconComponent = stat.icon;
-          return <Card key={index} className="card-feature text-center">
+          return <Card 
+            key={index} 
+            className={`card-feature text-center transition-all duration-500 hover-scale ${
+              statsVisible 
+                ? 'opacity-100 scale-100' 
+                : 'opacity-0 scale-90'
+            }`}
+            style={{ transitionDelay: `${200 + index * 100}ms` }}
+          >
                 <div className="flex justify-center mb-3">
                   <div className="p-3 bg-primary/10 rounded-full">
                     <IconComponent className="h-6 w-6 text-primary" />
@@ -175,7 +234,15 @@ const MobileAppSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <Card className="card-gradient text-center mt-12">
+        <div 
+          ref={ctaRef}
+          className={`transition-all duration-700 ${
+            ctaVisible 
+              ? 'opacity-100 translate-y-0 scale-100' 
+              : 'opacity-0 translate-y-8 scale-95'
+          }`}
+        >
+          <Card className="card-gradient text-center mt-12">
           <h3 className="text-xl font-bold mb-2">
             Start Learning Today with Our Mobile App
           </h3>
@@ -191,7 +258,8 @@ const MobileAppSection = () => {
               App download link sent after registration
             </div>
           </div>
-        </Card>
+          </Card>
+        </div>
       </div>
     </section>;
 };
