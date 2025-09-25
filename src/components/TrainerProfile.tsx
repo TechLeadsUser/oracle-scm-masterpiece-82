@@ -83,7 +83,19 @@ const TrainerProfile = () => {
               </div>
 
               {/* Certifications */}
-              
+              <div>
+                <h4 className="font-semibold mb-3 flex items-center gap-2 text-foreground">
+                  <Award className="h-5 w-5 text-primary" />
+                  Oracle Certifications
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {certifications.map(cert => (
+                    <Badge key={cert} variant="secondary" className="border-secondary/30 text-secondary hover:bg-secondary/10">
+                      {cert}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
 
               {/* Key Achievements */}
               <div className="bg-gradient-card p-4 rounded-xl border border-primary/20">
