@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Calendar, Clock, Video, Download, HeadphonesIcon, BookOpen, Users, GraduationCap } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
@@ -159,6 +160,16 @@ const ScheduleSection = () => {
             <p className="text-muted-foreground">
               <strong>Timeline:</strong> Each session 1 hour • Recorded for your convenience • Demo session Recordings will be Provided
             </p>
+          </div>
+          
+          <div className="mt-8 pt-6 border-t border-border/20">
+            <p className="text-lg text-muted-foreground mb-4">
+              Want to see the complete training program?
+            </p>
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Download className="h-4 w-4 mr-2" />
+              Download Full Curriculum
+            </Button>
           </div>
         </Card>
       </div>
