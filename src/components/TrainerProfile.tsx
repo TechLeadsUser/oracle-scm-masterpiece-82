@@ -32,7 +32,7 @@ const TrainerProfile = () => {
             <div className="md:col-span-1 text-center">
               <div className="relative inline-block">
                 <img src={trainerImage} alt="Anil Reddy - Senior Oracle Consultant with 12+ years experience" className="w-48 h-48 rounded-2xl object-cover mx-auto shadow-glow border-2 border-primary/20" />
-                <Badge className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-success text-success-foreground border-0">Oracle Expert</Badge>
+                <Badge className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-success text-success-foreground border-0">Oracle Exper</Badge>
               </div>
               
               <div className="mt-6 space-y-2">
@@ -83,7 +83,19 @@ const TrainerProfile = () => {
               </div>
 
               {/* Certifications */}
-              
+              <div>
+                <h4 className="font-semibold mb-3 flex items-center gap-2 text-foreground">
+                  <Award className="h-5 w-5 text-primary" />
+                  Oracle Certifications
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {certifications.map(cert => (
+                    <Badge key={cert} variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
+                      {cert}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
 
               {/* Key Achievements */}
               <div className="bg-gradient-card p-4 rounded-xl border border-primary/20">
