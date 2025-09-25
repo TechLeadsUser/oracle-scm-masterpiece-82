@@ -27,7 +27,7 @@ const ScheduleSection = () => {
     {
       day: 'Day 2', 
       title: 'Procurement Module – Live Hands-on',
-      type: 'Practical Class',
+      type: 'Live Zoom Session',
       duration: '1 Hour',
       color: 'success',
       icon: BookOpen,
@@ -41,7 +41,7 @@ const ScheduleSection = () => {
     {
       day: 'Day 3',
       title: 'Inventory & Order Management – Use Case Demo',
-      type: 'Project Session',
+      type: 'Live Zoom Session',
       duration: '1 Hour', 
       color: 'accent',
       icon: Calendar,
