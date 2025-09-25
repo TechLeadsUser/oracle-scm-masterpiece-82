@@ -164,7 +164,7 @@ const LeadFormSection = () => {
                     <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center text-xs font-bold text-secondary">2</div>
                     <div>
                       <div className="font-medium">Program Overview </div>
-                      <div className="text-sm text-muted-foreground">Program Overview – Get a complete outline of our curriculum and training structure</div>
+                      <div className="text-sm text-muted-foreground">Get a complete outline of our curriculum & training structure</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
