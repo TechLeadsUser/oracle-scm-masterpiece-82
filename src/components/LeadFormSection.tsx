@@ -87,9 +87,7 @@ const LeadFormSection = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold mb-2">Free Demo Registration</h3>
-                  <p className="text-sm text-muted-foreground">
-                    No payment required • Instant confirmation • Cancel anytime
-                  </p>
+                  <p className="text-sm text-muted-foreground">No payment required • Instant confirmation </p>
                 </div>
 
                 {/* Name Field */}
@@ -186,11 +184,11 @@ const LeadFormSection = () => {
                 <h3 className="text-lg font-bold mb-4">This Month's Numbers</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-3 bg-success/10 rounded-lg">
-                    <div className="text-2xl font-bold text-success">247</div>
+                    <div className="text-2xl font-bold text-success">150</div>
                     <div className="text-xs text-muted-foreground">Demo Attendees</div>
                   </div>
                   <div className="text-center p-3 bg-primary/10 rounded-lg">
-                    <div className="text-2xl font-bold text-primary">189</div>
+                    <div className="text-2xl font-bold text-primary">180</div>
                     <div className="text-xs text-muted-foreground">Enrollments</div>
                   </div>
                 </div>
