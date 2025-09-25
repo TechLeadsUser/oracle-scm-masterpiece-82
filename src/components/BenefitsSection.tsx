@@ -16,7 +16,9 @@ import {
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const BenefitsSection = () => {
-  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: benefitsRef, isIntersecting: benefitsVisible } = useIntersectionObserver();
+  const { ref: valueRef, isIntersecting: valueVisible } = useIntersectionObserver();
   
   const benefits = [
     {
@@ -58,11 +60,14 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-br from-background to-primary/5">
+    <section className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
-        <div className={`text-center mb-12 transition-all duration-1000 ${
-          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-        }`}>
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 transition-all duration-700 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Why Attend This <span className="text-gradient">Demo?</span>
           </h2>
@@ -72,7 +77,10 @@ const BenefitsSection = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div
+          ref={benefitsRef}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+        >
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             const colorClasses = {
@@ -83,9 +91,13 @@ const BenefitsSection = () => {
             };
 
             return (
-              <Card key={index} className={`card-feature group hover:scale-105 transition-all duration-1000 ${
-                isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-              }`} style={{ animationDelay: `${index * 150}ms` }}>
+              <Card
+                key={index}
+                className={`card-feature group hover:scale-105 transition-all duration-700 ${
+                  benefitsVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
                 <div className="text-center">
                   <div className={`inline-flex p-4 rounded-2xl mb-4 ${colorClasses[benefit.color]} group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="h-8 w-8" />
@@ -99,9 +111,12 @@ const BenefitsSection = () => {
         </div>
 
         {/* Value Proposition Card */}
-        <Card className={`card-gradient transition-all duration-1000 delay-900 ${
-          isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
-        }`}>
+        <Card
+          ref={valueRef}
+          className={`card-gradient transition-all duration-700 delay-900 ${
+            valueVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+          }`}
+        >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center gap-2 mb-4">

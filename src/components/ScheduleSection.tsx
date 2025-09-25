@@ -5,7 +5,9 @@ import { Calendar, Clock, Video, Download, HeadphonesIcon, BookOpen, Users, Grad
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const ScheduleSection = () => {
-  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: cardsRef, isIntersecting: cardsVisible } = useIntersectionObserver();
+  const { ref: includedRef, isIntersecting: includedVisible } = useIntersectionObserver();
   
   const schedule = [
     {
@@ -60,11 +62,14 @@ const ScheduleSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-background">
+    <section className="section-padding bg-background">
       <div className="container-wide">
-        <div className={`text-center mb-12 transition-all duration-1000 ${
-          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-        }`}>
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 transition-all duration-700 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Your <span className="text-gradient">3-Day Preview Journey</span>
           </h2>
@@ -74,16 +79,23 @@ const ScheduleSection = () => {
         </div>
 
         {/* Schedule Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div
+          ref={cardsRef}
+          className="grid md:grid-cols-3 gap-8 mb-12"
+        >
           {schedule.map((session, index) => {
             const IconComponent = session.icon;
             const colorClass = session.color === 'success' ? 'border-success/20 bg-success/5' : 'border-accent/20 bg-accent/5';
             const badgeColor = session.color === 'success' ? 'bg-success text-success-foreground' : 'bg-accent text-accent-foreground';
             
             return (
-              <Card key={index} className={`card-feature ${colorClass} hover:scale-105 transition-all duration-1000 ${
-                isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-              }`} style={{ animationDelay: `${index * 200}ms` }}>
+              <Card
+                key={index}
+                className={`card-feature ${colorClass} hover:scale-105 transition-all duration-700 ${
+                  cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
                 <div className="text-center mb-6">
                   <Badge className={`${badgeColor} mb-4 px-3 py-1`}>
                     {session.day}
@@ -122,9 +134,12 @@ const ScheduleSection = () => {
         </div>
 
         {/* What's Included */}
-        <Card className={`card-gradient text-center transition-all duration-1000 delay-600 ${
-          isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
-        }`}>
+        <Card
+          ref={includedRef}
+          className={`card-gradient text-center transition-all duration-700 delay-600 ${
+            includedVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+          }`}
+        >
           <h3 className="text-2xl font-bold mb-6">What's Included in Your Free Preview</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {includes.map((item, index) => {

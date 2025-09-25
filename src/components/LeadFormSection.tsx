@@ -26,7 +26,9 @@ import {
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const LeadFormSection = () => {
-  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: formRef, isIntersecting: formVisible } = useIntersectionObserver();
+  const { ref: sidebarRef, isIntersecting: sidebarVisible } = useIntersectionObserver();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     fullName: '',
@@ -79,13 +81,16 @@ const LeadFormSection = () => {
   };
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-br from-background to-primary/5">
+    <section className="section-padding bg-gradient-to-br from-background to-primary/5">
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-12 transition-all duration-1000 ${
-            isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-          }`}>
+          <div
+            ref={headerRef}
+            className={`text-center mb-12 transition-all duration-700 ${
+              headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <Badge className="bg-success text-success-foreground mb-4 px-4 py-2">
               🎯 Limited Seats Available
             </Badge>
@@ -99,9 +104,12 @@ const LeadFormSection = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Form */}
-            <Card className={`card-gradient transition-all duration-1000 delay-300 ${
-              isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
-            }`}>
+            <Card
+              ref={formRef}
+              className={`card-gradient transition-all duration-700 delay-300 ${
+                formVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-8 scale-95'
+              }`}
+            >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold mb-2">Free Demo Registration</h3>
@@ -215,9 +223,12 @@ const LeadFormSection = () => {
             </Card>
 
             {/* Benefits & Trust */}
-            <div className={`space-y-6 transition-all duration-1000 delay-600 ${
-              isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-x-10'
-            }`}>
+            <div
+              ref={sidebarRef}
+              className={`space-y-6 transition-all duration-700 delay-600 ${
+                sidebarVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+              }`}
+            >
               {/* What Happens Next */}
               <Card className="card-feature">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">

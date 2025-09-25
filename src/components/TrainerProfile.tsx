@@ -6,7 +6,8 @@ import trainerImage from '@/assets/trainer-anil.jpg';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const TrainerProfile = () => {
-  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: cardRef, isIntersecting: cardVisible } = useIntersectionObserver();
   
   const companies = ['Oracle', 'Capgemini', 'Infosys', 'TCS'];
   const certifications = [
@@ -17,11 +18,14 @@ const TrainerProfile = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-br from-muted/30 to-background">
+    <section className="section-padding bg-gradient-to-br from-muted/30 to-background">
       <div className="container-wide">
-        <div className={`text-center mb-12 transition-all duration-1000 ${
-          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-        }`}>
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 transition-all duration-700 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Meet Your Expert <span className="text-gradient">Trainer</span>
           </h2>
@@ -30,9 +34,12 @@ const TrainerProfile = () => {
           </p>
         </div>
 
-        <Card className={`card-gradient max-w-4xl mx-auto transition-all duration-1000 delay-300 ${
-          isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
-        }`}>
+        <Card
+          ref={cardRef}
+          className={`card-gradient max-w-4xl mx-auto transition-all duration-700 delay-300 ${
+            cardVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+          }`}
+        >
           <div className="grid md:grid-cols-3 gap-8 items-start">
             {/* Trainer Image */}
             <div className="md:col-span-1 text-center">

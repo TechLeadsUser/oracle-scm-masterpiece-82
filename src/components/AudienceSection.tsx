@@ -3,7 +3,9 @@ import { Card } from '@/components/ui/card';
 import { Users, GraduationCap, Code, TrendingUp, Clock, Target } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const AudienceSection = () => {
-  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: cardsRef, isIntersecting: cardsVisible } = useIntersectionObserver();
+  const { ref: ctaRef, isIntersecting: ctaVisible } = useIntersectionObserver();
   
   const audiences = [{
     icon: GraduationCap,
@@ -27,11 +29,14 @@ const AudienceSection = () => {
     benefits: ['No technical background required', 'Learn while working your current job', 'Weekend and evening batches available', 'Average salary increase: 150-300%'],
     color: 'primary'
   }];
-  return <section ref={ref} className="section-padding bg-gradient-to-br from-muted/20 to-background">
+  return <section className="section-padding bg-gradient-to-br from-muted/20 to-background">
       <div className="container-wide">
-        <div className={`text-center mb-12 transition-all duration-1000 ${
-          isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-        }`}>
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 transition-all duration-700 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Perfect for <span className="text-gradient">Every Career Stage</span>
           </h2>
@@ -40,7 +45,10 @@ const AudienceSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div
+          ref={cardsRef}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {audiences.map((audience, index) => {
           const IconComponent = audience.icon;
           const colorClasses = {
@@ -53,9 +61,13 @@ const AudienceSection = () => {
             secondary: 'text-secondary bg-secondary/10',
             accent: 'text-accent bg-accent/10'
           };
-          return <Card key={index} className={`card-feature ${colorClasses[audience.color]} group transition-all duration-1000 ${
-            isIntersecting ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-          }`} style={{ animationDelay: `${index * 200}ms` }}>
+          return <Card
+            key={index}
+            className={`card-feature ${colorClasses[audience.color]} group transition-all duration-700 ${
+              cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+            style={{ transitionDelay: `${index * 200}ms` }}
+          >
                 {/* Icon */}
                 <div className="text-center mb-6">
                   <div className={`inline-flex p-4 rounded-2xl ${iconColors[audience.color]} group-hover:scale-110 transition-transform duration-300`}>
@@ -93,9 +105,12 @@ const AudienceSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-12">
-          <Card className={`card-gradient inline-block p-6 max-w-2xl transition-all duration-1000 delay-600 ${
-            isIntersecting ? 'animate-scale-in' : 'opacity-0 scale-95'
-          }`}>
+          <Card
+            ref={ctaRef}
+            className={`card-gradient inline-block p-6 max-w-2xl transition-all duration-700 delay-600 ${
+              ctaVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+            }`}
+          >
             <h3 className="text-xl font-bold mb-2">Still Not Sure Which Path Is Right?</h3>
             <p className="text-muted-foreground mb-4">
               Join our free demo session and speak directly with our career counselor
