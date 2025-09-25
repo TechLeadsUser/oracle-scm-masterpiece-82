@@ -163,13 +163,15 @@ const ScheduleSection = () => {
           </div>
           
           <div className="mt-8 pt-6 border-t border-border/20">
-            <p className="text-lg text-muted-foreground mb-4">
-              Want to see the complete training program?
-            </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              <Download className="h-4 w-4 mr-2" />
-              Download Full Curriculum
-            </Button>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <p className="text-lg text-muted-foreground">
+                Want to see the complete training program?
+              </p>
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                <Download className="h-4 w-4 mr-2" />
+                Download Full Curriculum
+              </Button>
+            </div>
           </div>
         </Card>
       </div>
