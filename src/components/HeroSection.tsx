@@ -66,6 +66,10 @@ const HeroSection = () => {
                 <Target className="mr-2 h-5 w-5" />
                 Reserve My Free Seat
               </Button>
+              <Button className="btn-whatsapp text-lg">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Chat with Support
+              </Button>
             </div>
 
             {/* Trust Indicators */}
