@@ -51,7 +51,7 @@ const BenefitsSection = () => {
       <div className="container-wide">
         <div ref={headerRef} className={`text-center mb-12 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Why Attend This <span className="text-gradient">Demo?</span>
+            Beyond Training: A Complete <span className="text-gradient">Career Ecosystem</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Experience our unique training methodology and see why 95% of our students recommend us
