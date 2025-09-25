@@ -90,7 +90,7 @@ const TrainerProfile = () => {
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {certifications.map(cert => (
-                    <Badge key={cert} variant="secondary" className="border-secondary/30 text-secondary hover:bg-secondary/10">
+                    <Badge key={cert} variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
                       {cert}
                     </Badge>
                   ))}
