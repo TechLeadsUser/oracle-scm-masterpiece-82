@@ -10,37 +10,37 @@ const PricingSection = () => {
   const { ref: cardsRef, isIntersecting: cardsVisible } = useIntersectionObserver();
   
   const plans = [{
-    name: 'Self-Paced Learning',
-    price: '₹14,999',
-    originalPrice: '₹24,999',
+    name: 'Self Paced',
+    price: '₹20,000',
+    originalPrice: '',
     type: 'recorded',
-    description: 'Perfect for self-motivated learners',
-    features: ['Pre-recorded video sessions', 'Lifetime access to content', 'PDF materials & quizzes', 'Basic email support', 'Certificate of completion', 'Mobile app access'],
-    limitations: ['No live interaction', 'Limited doubt clearing', 'No placement assistance'],
+    description: 'Learn at your own speed with structured, pre-recorded lessons designed by experts.',
+    features: ['Pre-recorded high-quality video lessons', 'Lifetime access to course materials', 'Industry-relevant curriculum', 'Assignments & quizzes', 'Learn at your own pace', 'Placement Guidance'],
+    limitations: [],
     badge: '',
-    buttonText: 'Choose Self-Paced',
+    buttonText: 'Buy Now',
     buttonVariant: 'outline'
   }, {
-    name: 'Live Online Training',
-    price: '₹24,999',
-    originalPrice: '₹39,999',
+    name: 'Live Training',
+    price: '₹30,000',
+    originalPrice: '',
     type: 'live',
-    description: 'Our most popular complete program',
-    features: ['Live interactive sessions', 'Direct trainer interaction', 'Real-time doubt clearing', 'Live projects & assignments', 'Resume building assistance', 'Interview preparation', 'Job placement assistance', 'Lifetime community access', 'Mobile app with offline sync', '24/7 support channel'],
+    description: 'Experience real-time learning with industry experts. Get personalized feedback from mentors.',
+    features: ['Instructor-led live sessions', 'Doubt-clearing sessions', 'Hands-on projects & case studies', 'Access to recorded sessions', 'Certification support', 'Placement assistance for merit students'],
     limitations: [],
     badge: 'Most Popular',
-    buttonText: 'Join Live Training',
+    buttonText: 'Buy Now',
     buttonVariant: 'cta'
   }, {
     name: 'Corporate Training',
-    price: 'Custom',
+    price: "Let's Discuss",
     originalPrice: '',
     type: 'corporate',
-    description: 'Tailored for teams and organizations',
-    features: ['Customized curriculum', 'On-site/remote delivery', 'Team progress tracking', 'Dedicated account manager', 'Flexible scheduling', 'Volume discounts available', 'Post-training support', 'Custom certification'],
+    description: 'Upskill your team with tailor-made corporate training programs. Get customized content & dedicated support.',
+    features: ['Customized training for teams', 'Flexible batch scheduling', 'Industry-focused curriculum', 'One-on-one mentorship', 'Dedicated support team', 'Exclusive hiring support'],
     limitations: [],
     badge: 'Enterprise',
-    buttonText: 'Request Quote',
+    buttonText: 'Get A Personal Quote',
     buttonVariant: 'hero'
   }];
   return <section className="section-padding bg-gradient-to-br from-background to-primary/5">
