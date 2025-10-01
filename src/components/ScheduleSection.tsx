@@ -119,7 +119,7 @@ const ScheduleSection = () => {
                   <div className="p-3 bg-primary/10 rounded-full">
                     <IconComponent className="h-6 w-6 text-primary" />
                   </div>
-                  <span className="font-medium text-sm">{item.label}</span>
+                  <span className="font-medium text-base">{item.label}</span>
                 </div>;
           })}
           </div>
