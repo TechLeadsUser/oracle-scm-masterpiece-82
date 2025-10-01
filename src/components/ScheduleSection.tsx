@@ -24,14 +24,7 @@ const ScheduleSection = () => {
     duration: '1 Hour',
     color: 'success',
     icon: Video,
-    topics: [
-      'Fusion SCM in the job market',
-      'Course structure & roadmap',
-      'How this course shapes your career',
-      'Our mentoring approach',
-      'Understand where Fusion SCM fits in ERP',
-      'Gain clarity on career opportunities'
-    ]
+    topics: ['Fusion SCM in the job market', 'Course structure & roadmap', 'How this course shapes your career', 'Our mentoring approach', 'Understand where Fusion SCM fits in ERP', 'Gain clarity on career opportunities']
   }, {
     day: 'Day 1',
     title: 'Functional Foundations',
@@ -39,14 +32,7 @@ const ScheduleSection = () => {
     duration: '1 Hour',
     color: 'success',
     icon: BookOpen,
-    topics: [
-      'Oracle Licensing',
-      'SCM Functional Consultant Role',
-      'Project Types in Real-Time',
-      'Role of Consultants in Implementation',
-      'Learn consultant role & responsibilities',
-      'Explore project types in real-time scenarios'
-    ]
+    topics: ['Oracle Licensing', 'SCM Functional Consultant Role', 'Project Types in Real-Time', 'Role of Consultants in Implementation', 'Learn consultant role & responsibilities', 'Explore project types in real-time scenarios']
   }, {
     day: 'Day 2',
     title: 'Fusion Applications',
@@ -54,14 +40,7 @@ const ScheduleSection = () => {
     duration: '1 Hour',
     color: 'accent',
     icon: Calendar,
-    topics: [
-      'Application Architecture',
-      'Navigation & Features',
-      'Module Integration',
-      'Role-based Access & Security',
-      'Build a strong foundation for SCM modules',
-      'Prepare to dive deeper into SCM modules'
-    ]
+    topics: ['Application Architecture', 'Navigation & Features', 'Module Integration', 'Role-based Access & Security', 'Build a strong foundation for SCM modules', 'Prepare to dive deeper into SCM modules']
   }];
   const includes = [{
     icon: BookOpen,
@@ -151,7 +130,7 @@ const ScheduleSection = () => {
             </p>
           </div>
           
-          <div className="mt-8 pt-6 border-t border-border/20">
+          <div className="mt-8 pt-6 border-t border-border/20 py-0">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <p className="text-lg text-muted-foreground">
                 Want to see the complete training program?
