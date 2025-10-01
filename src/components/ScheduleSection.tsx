@@ -126,16 +126,18 @@ const ScheduleSection = () => {
           
           
           
-          <div className="mt-8 pt-6 border-t border-border/20 py-0">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <p className="text-lg text-muted-foreground">
-                Want to see the complete training program?
-              </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                <Download className="h-4 w-4 mr-2" />
-                Download Full Curriculum
-              </Button>
-            </div>
+          <div className="mt-8">
+            <Card className="p-6 bg-primary/5 border-primary/20">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <p className="text-lg text-muted-foreground">
+                  Want to see the complete training program?
+                </p>
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  <Download className="h-4 w-4 mr-2" />
+                  Download Full Curriculum
+                </Button>
+              </div>
+            </Card>
           </div>
         </Card>
       </div>
