@@ -124,11 +124,7 @@ const ScheduleSection = () => {
           })}
           </div>
           
-          <div className="mt-8 p-4 bg-gradient-card rounded-xl border border-primary/10">
-            <p className="text-muted-foreground">
-              <strong>Timeline:</strong> Each session 1 hour • Recorded for your convenience • Demo session Recordings will be Provided
-            </p>
-          </div>
+          
           
           <div className="mt-8 pt-6 border-t border-border/20 py-0">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
