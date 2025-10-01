@@ -64,17 +64,17 @@ const ScheduleSection = () => {
     ]
   }];
   const includes = [{
-    icon: Video,
-    label: 'Zoom recordings access'
+    icon: GraduationCap,
+    label: 'Course Structure & Career Path'
   }, {
     icon: Users,
-    label: 'Interact with Trainers'
+    label: 'Industry Role Requirements'
   }, {
-    icon: GraduationCap,
-    label: 'Clear understanding about the course'
+    icon: BookOpen,
+    label: 'Real-Time Project Scenarios'
   }, {
-    icon: HeadphonesIcon,
-    label: 'Q&A support'
+    icon: Video,
+    label: 'Confidence to Make Decision'
   }];
   return <section className="section-padding bg-background">
       <div className="container-wide">
