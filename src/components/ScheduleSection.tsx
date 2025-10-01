@@ -127,7 +127,7 @@ const ScheduleSection = () => {
           
           
           <div className="mt-8">
-            <Card className="p-6 bg-primary/5 border-primary/20">
+            <Card className="p-6 bg-primary/5 border-primary/20 py-[10px]">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <p className="text-lg text-muted-foreground">
                   Want to see the complete training program?
