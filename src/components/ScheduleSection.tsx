@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Calendar, Clock, Video, Download, HeadphonesIcon, BookOpen, Users, GraduationCap } from 'lucide-react';
+import { Calendar, Clock, Video, Download, HeadphonesIcon, BookOpen, Users, GraduationCap, Target, Presentation, CheckCircle } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const ScheduleSection = () => {
   const {
@@ -46,13 +46,13 @@ const ScheduleSection = () => {
     icon: BookOpen,
     label: 'Preview Complete Course Content'
   }, {
-    icon: GraduationCap,
+    icon: Target,
     label: 'Validate If Course Fits Your Goals'
   }, {
-    icon: Users,
+    icon: Presentation,
     label: 'Experience Faculty Teaching Style'
   }, {
-    icon: Video,
+    icon: CheckCircle,
     label: 'Make an Informed Decision'
   }];
   return <section className="section-padding bg-background">
