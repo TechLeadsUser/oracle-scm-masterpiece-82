@@ -18,29 +18,50 @@ const ScheduleSection = () => {
     isIntersecting: includedVisible
   } = useIntersectionObserver();
   const schedule = [{
-    day: 'Day 1',
-    title: 'Free Demo - Oracle SCM Overview & Career Scope',
+    day: 'Demo Session',
+    title: 'Career Path & Mentoring',
     type: 'Live Zoom Session',
     duration: '1 Hour',
     color: 'success',
     icon: Video,
-    topics: ['Oracle Fusion SCM Introduction', 'Career opportunities in SCM', 'Live Q&A with industry experts', 'Course roadmap preview']
+    topics: [
+      'Fusion SCM in the job market',
+      'Course structure & roadmap',
+      'How this course shapes your career',
+      'Our mentoring approach',
+      'Understand where Fusion SCM fits in ERP',
+      'Gain clarity on career opportunities'
+    ]
   }, {
-    day: 'Day 2',
-    title: 'Procurement Module – Live Hands-on',
+    day: 'Day 1',
+    title: 'Functional Foundations',
     type: 'Live Zoom Session',
     duration: '1 Hour',
     color: 'success',
     icon: BookOpen,
-    topics: ['Purchase requisitions setup', 'Supplier management', 'Approval workflows', 'Real-time practice session']
+    topics: [
+      'Oracle Licensing',
+      'SCM Functional Consultant Role',
+      'Project Types in Real-Time',
+      'Role of Consultants in Implementation',
+      'Learn consultant role & responsibilities',
+      'Explore project types in real-time scenarios'
+    ]
   }, {
-    day: 'Day 3',
-    title: 'Inventory & Order Management – Use Case Demo',
+    day: 'Day 2',
+    title: 'Fusion Applications',
     type: 'Live Zoom Session',
     duration: '1 Hour',
     color: 'accent',
     icon: Calendar,
-    topics: ['Inventory tracking systems', 'Order lifecycle management', 'Industry use cases', 'Project assignment']
+    topics: [
+      'Application Architecture',
+      'Navigation & Features',
+      'Module Integration',
+      'Role-based Access & Security',
+      'Build a strong foundation for SCM modules',
+      'Prepare to dive deeper into SCM modules'
+    ]
   }];
   const includes = [{
     icon: Video,
