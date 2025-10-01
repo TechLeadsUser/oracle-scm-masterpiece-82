@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Calendar, Clock, Video, Download, HeadphonesIcon, BookOpen, Users, GraduationCap, Target, Presentation, CheckCircle } from 'lucide-react';
+import { Clock, Download, BookOpen, Users, GraduationCap, Target, Presentation, CheckCircle, Briefcase, Layers } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const ScheduleSection = () => {
   const {
@@ -23,7 +23,7 @@ const ScheduleSection = () => {
     type: 'Live Zoom Session',
     duration: '1 Hour',
     color: 'success',
-    icon: Video,
+    icon: GraduationCap,
     topics: ['Fusion SCM in the job market', 'Course structure & roadmap', 'How this course shapes your career', 'Our mentoring approach', 'Understand where Fusion SCM fits in ERP', 'Gain clarity on career opportunities']
   }, {
     day: 'Day 1',
@@ -31,7 +31,7 @@ const ScheduleSection = () => {
     type: 'Live Zoom Session',
     duration: '1 Hour',
     color: 'success',
-    icon: BookOpen,
+    icon: Briefcase,
     topics: ['Oracle Licensing', 'SCM Functional Consultant Role', 'Project Types in Real-Time', 'Role of Consultants in Implementation', 'Learn consultant role & responsibilities', 'Explore project types in real-time scenarios']
   }, {
     day: 'Day 2',
@@ -39,7 +39,7 @@ const ScheduleSection = () => {
     type: 'Live Zoom Session',
     duration: '1 Hour',
     color: 'accent',
-    icon: Calendar,
+    icon: Layers,
     topics: ['Application Architecture', 'Navigation & Features', 'Module Integration', 'Role-based Access & Security', 'Build a strong foundation for SCM modules', 'Prepare to dive deeper into SCM modules']
   }];
   const includes = [{
