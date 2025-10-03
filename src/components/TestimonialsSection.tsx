@@ -121,7 +121,14 @@ const TestimonialsSection = () => {
             {/* Student Info */}
             <div className="text-center">
               <div className="mb-4 flex justify-center">
-                <img src={currentTestimonial.image} alt={currentTestimonial.name} className="w-32 h-32 rounded-full object-cover border-4 border-primary/20 shadow-lg" />
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.techleadsit.academy_app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="cursor-pointer transition-transform hover:scale-105"
+                >
+                  <img src={currentTestimonial.image} alt={currentTestimonial.name} className="w-32 h-32 rounded-full object-cover border-4 border-primary/20 shadow-lg" />
+                </a>
               </div>
               <h3 className="text-xl font-bold mb-2">{currentTestimonial.name}</h3>
               
