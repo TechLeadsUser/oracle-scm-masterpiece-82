@@ -50,9 +50,7 @@ const AudienceSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Perfect for Every <span className="text-gradient">Career Stage</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            This webinar is designed for anyone looking to advance their career in tech
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Whether you're starting fresh or upgrading your skills, our program is designed for your success</p>
         </div>
 
         <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
