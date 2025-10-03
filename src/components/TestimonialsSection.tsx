@@ -194,9 +194,9 @@ const TestimonialsSection = () => {
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-2">
-                      <TrendingUp className="h-4 w-4 text-success" />
-                      <Badge className="bg-success text-success-foreground">
+                    <div className="flex items-center gap-2 flex-nowrap">
+                      <TrendingUp className="h-4 w-4 text-success flex-shrink-0" />
+                      <Badge className="bg-success text-success-foreground whitespace-nowrap">
                         {currentTestimonial.salaryIncrease !== 'First Job' 
                           ? `${currentTestimonial.salaryIncrease} Salary Increase` 
                           : 'First Job Success'}
