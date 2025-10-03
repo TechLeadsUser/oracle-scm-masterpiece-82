@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
-import { Users, GraduationCap, Code, TrendingUp, Clock, Target } from 'lucide-react';
+import { Users, GraduationCap, Code, TrendingUp, Clock, Target, Briefcase } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const AudienceSection = () => {
   const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
@@ -9,24 +9,31 @@ const AudienceSection = () => {
   
   const audiences = [{
     icon: GraduationCap,
-    title: 'Fresh Graduates',
-    subtitle: 'Get job-ready with in-demand skills',
-    description: 'Start your career with enterprise-grade Oracle skills that companies desperately need',
-    benefits: ['Industry-ready certification', 'Live project experience', 'Placement assistance included', 'Starting salary: 4-8 LPA'],
+    title: 'Students & Beginners',
+    subtitle: 'Start your journey from scratch',
+    description: 'Perfect for students and freshers who want to start their journey in a new domain from scratch',
+    benefits: ['No prior experience needed', 'Learn through real-world examples'],
+    color: 'primary'
+  }, {
+    icon: Briefcase,
+    title: 'Working Professionals',
+    subtitle: 'Upskill without disrupting your job',
+    description: 'Busy professionals seeking to upskill and add new technical expertise to their profile',
+    benefits: ['Upgrade your skill set efficiently', 'Learn without disrupting your job'],
     color: 'secondary'
   }, {
-    icon: Code,
-    title: 'IT Professionals',
-    subtitle: 'Upgrade from SAP/Legacy ERP to Oracle Cloud',
-    description: 'Leverage your existing ERP knowledge to master the most in-demand Oracle Cloud platform',
-    benefits: ['Fast-track learning path', 'Advanced modules included', 'Consultant-level training', 'Premium salary packages'],
+    icon: Target,
+    title: 'Industry Experts',
+    subtitle: 'Stay current with latest trends',
+    description: 'Experienced professionals aiming to stay current with the latest trends and technologies',
+    benefits: ['Learn feature upgrades & best practices', 'Deep-dive into real-time use cases'],
     color: 'accent'
   }, {
-    icon: Users,
-    title: 'Working Professionals',
-    subtitle: 'Transition to IT with no coding background',
-    description: 'Perfect for professionals from any domain looking to switch to high-paying Oracle careers',
-    benefits: ['No technical background required', 'Learn while working your current job', 'Weekend and evening batches available', 'Average salary increase: 150-300%'],
+    icon: TrendingUp,
+    title: 'Career Changers',
+    subtitle: 'Explore new opportunities',
+    description: 'Professionals from other fields exploring new opportunities in a growing industry',
+    benefits: ['Clear roadmap for transition', 'Learn high-demand skills in tech'],
     color: 'primary'
   }];
   return <section className="section-padding bg-gradient-to-br from-muted/20 to-background">
@@ -38,16 +45,16 @@ const AudienceSection = () => {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Perfect for <span className="text-gradient">Every Career Stage</span>
+            Who Can Attend This <span className="text-gradient">Webinar</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Whether you're starting fresh or upgrading your skills, our program is designed for your success
+            This webinar is designed for anyone looking to advance their career in tech
           </p>
         </div>
 
         <div
           ref={cardsRef}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {audiences.map((audience, index) => {
           const IconComponent = audience.icon;
