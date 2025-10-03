@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Smartphone, Download, Play, FileText, Wifi, Clock, Coffee, Moon, Star, Users, Zap } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import appMockup from '@/assets/app-mockup.png';
 const MobileAppSection = () => {
   // Animation refs
   const {
@@ -131,43 +132,11 @@ const MobileAppSection = () => {
           {/* Right Content - Phone Mockup */}
           <div ref={phoneRef} className={`relative transition-all duration-700 delay-300 ${phoneVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-8 scale-95'}`}>
             <Card className="card-gradient p-8 text-center">
-              <div className="relative mx-auto w-64 h-96 bg-gradient-to-b from-primary/10 to-secondary/10 rounded-3xl border-8 border-muted/20 shadow-elegant">
-                {/* Phone Screen */}
-                <div className="absolute inset-4 bg-background rounded-2xl overflow-hidden">
-                  {/* Status Bar */}
-                  <div className="h-8 bg-primary/5 flex items-center justify-between px-4 text-xs">
-                    <span>9:41</span>
-                    <span>100%</span>
-                  </div>
-                  
-                  {/* App Content */}
-                  <div className="p-4 space-y-4">
-                    <div className="text-left">
-                      <Badge className="bg-red-500 text-white text-xs mb-2">🔴 LIVE</Badge>
-                      <h4 className="text-sm font-semibold">Oracle SCM Training</h4>
-                      <p className="text-xs text-muted-foreground">Module 3: Procurement</p>
-                    </div>
-                    
-                    <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
-                      <Play className="h-8 w-8 text-primary" />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <div className="h-3 bg-muted rounded"></div>
-                      <div className="h-3 bg-muted/60 rounded w-2/3"></div>
-                    </div>
-                    
-                    <div className="flex gap-2">
-                      <div className="flex-1 h-8 bg-success/20 rounded text-xs flex items-center justify-center text-success font-medium">
-                        Download
-                      </div>
-                      <div className="flex-1 h-8 bg-primary/20 rounded text-xs flex items-center justify-center text-primary font-medium">
-                        Notes
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src={appMockup} 
+                alt="Tech Leads IT Mobile App" 
+                className="mx-auto w-full max-w-2xl h-auto object-contain"
+              />
               
               <div className="mt-6 space-y-4">
                 <div className="flex flex-row gap-3 justify-center">
