@@ -28,21 +28,21 @@ const AudienceSection = () => {
     subtitle: 'Upskill without disrupting your job',
     description: 'Busy professionals seeking to upskill and add new technical expertise to their profile',
     benefits: ['Upgrade your skill set efficiently', 'Learn without disrupting your job'],
-    color: 'secondary'
+    color: 'accent'
   }, {
     icon: Target,
     title: 'Industry Experts',
     subtitle: 'Stay current with latest trends',
     description: 'Experienced professionals aiming to stay current with the latest trends and technologies',
     benefits: ['Learn feature upgrades & best practices', 'Deep-dive into real-time use cases'],
-    color: 'accent'
+    color: 'primary'
   }, {
     icon: TrendingUp,
     title: 'Career Changers',
     subtitle: 'Explore new opportunities',
     description: 'Professionals from other fields exploring new opportunities in a growing industry',
     benefits: ['Clear roadmap for transition', 'Learn high-demand skills in tech'],
-    color: 'primary'
+    color: 'accent'
   }];
   return <section className="section-padding bg-gradient-to-br from-muted/20 to-background">
       <div className="container-wide">
