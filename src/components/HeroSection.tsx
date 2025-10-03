@@ -6,11 +6,22 @@ import CountdownTimer from './CountdownTimer';
 import heroTraining from '@/assets/hero-training.jpg';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const HeroSection = () => {
-  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
-  const { ref: contentRef, isIntersecting: contentVisible } = useIntersectionObserver();
-  const { ref: imageRef, isIntersecting: imageVisible } = useIntersectionObserver();
-  const { ref: trustRef, isIntersecting: trustVisible } = useIntersectionObserver();
-  
+  const {
+    ref: headerRef,
+    isIntersecting: headerVisible
+  } = useIntersectionObserver();
+  const {
+    ref: contentRef,
+    isIntersecting: contentVisible
+  } = useIntersectionObserver();
+  const {
+    ref: imageRef,
+    isIntersecting: imageVisible
+  } = useIntersectionObserver();
+  const {
+    ref: trustRef,
+    isIntersecting: trustVisible
+  } = useIntersectionObserver();
   return <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/10">
       <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(195_100%_50%_/_0.1),transparent_50%)]"></div>
@@ -20,24 +31,14 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <div
-              ref={headerRef}
-              className={`transition-all duration-700 ${
-                headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
+            <div ref={headerRef} className={`transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <Badge className="bg-gradient-cta text-success-foreground px-4 py-2 text-sm font-semibold">
                 🎓 Free Demo + 2-Day Classes
               </Badge>
             </div>
 
             {/* Main Heading */}
-            <div
-              ref={contentRef}
-              className={`space-y-4 transition-all duration-700 delay-200 ${
-                contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
+            <div ref={contentRef} className={`space-y-4 transition-all duration-700 delay-200 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
                 Join Our Free Demo Session for{' '}
                 <span className="text-gradient">"Oracle Fusion SCM!"</span>
@@ -48,20 +49,12 @@ const HeroSection = () => {
             </div>
 
             {/* Countdown Timer */}
-            <div
-              className={`transition-all duration-700 delay-400 ${
-                contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
+            <div className={`transition-all duration-700 delay-400 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <CountdownTimer />
             </div>
 
             {/* CTA Buttons */}
-            <div
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-600 ${
-                contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
+            <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-600 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <Button className="btn-cta text-lg">
                 <Target className="mr-2 h-5 w-5" />
                 Reserve My Free Seat
@@ -73,19 +66,14 @@ const HeroSection = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div
-              ref={trustRef}
-              className={`flex items-center gap-6 pt-4 transition-all duration-700 delay-800 ${
-                trustVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
+            <div ref={trustRef} className={`flex items-center gap-6 pt-4 transition-all duration-700 delay-800 ${trustVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="flex items-center gap-2">
                 <Award className="h-5 w-5 text-success" />
                 <span className="text-sm font-medium text-foreground">Oracle Certified</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-5 w-5 text-primary" />
-                <span className="text-sm font-medium text-foreground">14,000+ Learners</span>
+                <span className="text-sm font-medium text-foreground">23,000+ Learners</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-success" />
@@ -95,12 +83,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Hero Image */}
-          <div
-            ref={imageRef}
-            className={`relative transition-all duration-700 delay-300 ${
-              imageVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-8 scale-95'
-            }`}
-          >
+          <div ref={imageRef} className={`relative transition-all duration-700 delay-300 ${imageVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-8 scale-95'}`}>
             <div className="relative rounded-2xl overflow-hidden shadow-glow border border-primary/20">
               <img src={heroTraining} alt="Oracle Fusion SCM Training - Interactive live sessions with expert guidance" className="w-full h-[500px] object-cover" />
               
