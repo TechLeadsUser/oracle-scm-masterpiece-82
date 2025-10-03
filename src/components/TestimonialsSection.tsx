@@ -21,7 +21,7 @@ const TestimonialsSection = () => {
       location: 'Bangalore',
       salaryIncrease: '220%',
       rating: 5,
-      image: '👩‍💼',
+      image: '/placeholder.svg',
       testimonial: "I had zero technical background when I started. Anil sir's teaching methodology made Oracle concepts so simple to understand. The live projects gave me real confidence. Got placed at Infosys with 8 LPA package - triple my previous salary!",
       highlights: ['Zero tech background', 'Got 8 LPA package', 'Real project confidence']
     },
@@ -33,7 +33,7 @@ const TestimonialsSection = () => {
       location: 'Hyderabad',
       salaryIncrease: '180%',
       rating: 5,
-      image: '👨‍💻',
+      image: '/placeholder.svg',
       testimonial: "Switching from mechanical to IT seemed impossible until I found this course. The 3-day free trial convinced me completely. The placement support was exceptional - got 3 offers and chose Capgemini. Best decision of my career!",
       highlights: ['Career switch success', 'Got 3 job offers', 'Exceptional support']
     },
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
       location: 'Chennai',
       salaryIncrease: '65%',
       rating: 5,
-      image: '👩‍💻',
+      image: '/placeholder.svg',
       testimonial: "Already had SAP experience but Oracle Cloud is the future. This course helped me transition smoothly. The trainer's industry experience was invaluable. Now leading Oracle implementations at TCS with 40% salary hike.",
       highlights: ['Smooth SAP to Oracle transition', '40% salary hike', 'Leading implementations']
     },
@@ -57,7 +57,7 @@ const TestimonialsSection = () => {
       location: 'Mumbai',
       salaryIncrease: 'First Job',
       rating: 5,
-      image: '👨‍🎓',
+      image: '/placeholder.svg',
       testimonial: "As a fresh graduate, I was worried about getting a good job. This course not only taught me Oracle but also helped with resume building and interview prep. Got placed in Accenture directly from campus with 6.5 LPA!",
       highlights: ['Fresh graduate success', 'Complete job preparation', '6.5 LPA first job']
     }
@@ -133,7 +133,13 @@ const TestimonialsSection = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Student Info */}
             <div className="text-center">
-              <div className="text-6xl mb-4">{currentTestimonial.image}</div>
+              <div className="mb-4 flex justify-center">
+                <img 
+                  src={currentTestimonial.image} 
+                  alt={currentTestimonial.name}
+                  className="w-32 h-32 rounded-full object-cover border-4 border-primary/20 shadow-lg"
+                />
+              </div>
               <h3 className="text-xl font-bold mb-2">{currentTestimonial.name}</h3>
               
               <div className="space-y-2 text-sm">
