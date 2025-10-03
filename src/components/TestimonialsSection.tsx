@@ -147,30 +147,6 @@ const TestimonialsSection = () => {
                 </Badge>
               </div>
 
-              {/* Career Progression */}
-              <div className="mt-6 p-4 bg-gradient-card rounded-xl border border-primary/10">
-                <div className="space-y-3">
-                  <div>
-                    <div className="text-xs text-muted-foreground">Previous Role</div>
-                    <div className="font-medium text-sm">{currentTestimonial.previousRole}</div>
-                  </div>
-                  
-                  <div className="flex items-center justify-center">
-                    <TrendingUp className="h-4 w-4 text-success" />
-                  </div>
-                  
-                  <div>
-                    <div className="text-xs text-muted-foreground">Current Role</div>
-                    <div className="font-medium text-sm">{currentTestimonial.currentRole}</div>
-                  </div>
-                </div>
-                
-                <Badge className="mt-3 bg-success text-success-foreground">
-                  {currentTestimonial.salaryIncrease !== 'First Job' 
-                    ? `${currentTestimonial.salaryIncrease} Salary Increase` 
-                    : 'First Job Success'}
-                </Badge>
-              </div>
             </div>
 
             {/* Testimonial Content */}
@@ -201,6 +177,30 @@ const TestimonialsSection = () => {
                           <span>{highlight}</span>
                         </div>
                       ))}
+                    </div>
+                  </div>
+
+                  {/* Career Progression */}
+                  <div className="mt-6 p-4 bg-gradient-card rounded-xl border border-primary/10">
+                    <div className="grid grid-cols-2 gap-4 mb-3">
+                      <div>
+                        <div className="text-xs text-muted-foreground mb-1">Previous Role</div>
+                        <div className="font-medium text-sm">{currentTestimonial.previousRole}</div>
+                      </div>
+                      
+                      <div>
+                        <div className="text-xs text-muted-foreground mb-1">Current Role</div>
+                        <div className="font-medium text-sm">{currentTestimonial.currentRole}</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <TrendingUp className="h-4 w-4 text-success" />
+                      <Badge className="bg-success text-success-foreground">
+                        {currentTestimonial.salaryIncrease !== 'First Job' 
+                          ? `${currentTestimonial.salaryIncrease} Salary Increase` 
+                          : 'First Job Success'}
+                      </Badge>
                     </div>
                   </div>
                 </div>
