@@ -1,61 +1,54 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
-import { Users, GraduationCap, Code, TrendingUp, Clock, Target, Briefcase } from 'lucide-react';
+import { Users, GraduationCap, Code, TrendingUp, Clock, Target } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const AudienceSection = () => {
-  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
-  const { ref: cardsRef, isIntersecting: cardsVisible } = useIntersectionObserver();
-  const { ref: ctaRef, isIntersecting: ctaVisible } = useIntersectionObserver();
-  
+  const {
+    ref: headerRef,
+    isIntersecting: headerVisible
+  } = useIntersectionObserver();
+  const {
+    ref: cardsRef,
+    isIntersecting: cardsVisible
+  } = useIntersectionObserver();
+  const {
+    ref: ctaRef,
+    isIntersecting: ctaVisible
+  } = useIntersectionObserver();
   const audiences = [{
     icon: GraduationCap,
-    title: 'Students & Beginners',
-    subtitle: 'Start your journey from scratch',
-    description: 'Perfect for students and freshers who want to start their journey in a new domain from scratch',
-    benefits: ['No prior experience needed', 'Learn through real-world examples'],
-    color: 'primary'
-  }, {
-    icon: Briefcase,
-    title: 'Working Professionals',
-    subtitle: 'Upskill without disrupting your job',
-    description: 'Busy professionals seeking to upskill and add new technical expertise to their profile',
-    benefits: ['Upgrade your skill set efficiently', 'Learn without disrupting your job'],
+    title: 'Fresh Graduates',
+    subtitle: 'Get job-ready with in-demand skills',
+    description: 'Start your career with enterprise-grade Oracle skills that companies desperately need',
+    benefits: ['Industry-ready certification', 'Live project experience', 'Placement assistance included', 'Starting salary: 4-8 LPA'],
     color: 'secondary'
   }, {
-    icon: Target,
-    title: 'Industry Experts',
-    subtitle: 'Stay current with latest trends',
-    description: 'Experienced professionals aiming to stay current with the latest trends and technologies',
-    benefits: ['Learn feature upgrades & best practices', 'Deep-dive into real-time use cases'],
+    icon: Code,
+    title: 'IT Professionals',
+    subtitle: 'Upgrade from SAP/Legacy ERP to Oracle Cloud',
+    description: 'Leverage your existing ERP knowledge to master the most in-demand Oracle Cloud platform',
+    benefits: ['Fast-track learning path', 'Advanced modules included', 'Consultant-level training', 'Premium salary packages'],
     color: 'accent'
   }, {
-    icon: TrendingUp,
-    title: 'Career Changers',
-    subtitle: 'Explore new opportunities',
-    description: 'Professionals from other fields exploring new opportunities in a growing industry',
-    benefits: ['Clear roadmap for transition', 'Learn high-demand skills in tech'],
+    icon: Users,
+    title: 'Working Professionals',
+    subtitle: 'Transition to IT with no coding background',
+    description: 'Perfect for professionals from any domain looking to switch to high-paying Oracle careers',
+    benefits: ['No technical background required', 'Learn while working your current job', 'Weekend and evening batches available', 'Average salary increase: 150-300%'],
     color: 'primary'
   }];
   return <section className="section-padding bg-gradient-to-br from-muted/20 to-background">
       <div className="container-wide">
-        <div
-          ref={headerRef}
-          className={`text-center mb-12 transition-all duration-700 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={headerRef} className={`text-center mb-12 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Who Can Attend This <span className="text-gradient">Webinar</span>
+            Perfect for <span className="text-gradient">Every Career Stage</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            This webinar is designed for anyone looking to advance their career in tech
+            Whether you're starting fresh or upgrading your skills, our program is designed for your success
           </p>
         </div>
 
-        <div
-          ref={cardsRef}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-        >
+        <div ref={cardsRef} className="grid md:grid-cols-3 gap-8">
           {audiences.map((audience, index) => {
           const IconComponent = audience.icon;
           const colorClasses = {
@@ -68,13 +61,9 @@ const AudienceSection = () => {
             secondary: 'text-secondary bg-secondary/10',
             accent: 'text-accent bg-accent/10'
           };
-          return <Card
-            key={index}
-            className={`card-feature ${colorClasses[audience.color]} group transition-all duration-700 ${
-              cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: `${index * 200}ms` }}
-          >
+          return <Card key={index} className={`card-feature ${colorClasses[audience.color]} group transition-all duration-700 ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
+            transitionDelay: `${index * 200}ms`
+          }}>
                 {/* Icon */}
                 <div className="text-center mb-6">
                   <div className={`inline-flex p-4 rounded-2xl ${iconColors[audience.color]} group-hover:scale-110 transition-transform duration-300`}>
@@ -92,12 +81,7 @@ const AudienceSection = () => {
                 </div>
 
                 {/* Benefits */}
-                <div className="space-y-3">
-                  {audience.benefits.map((benefit, i) => <div key={i} className="flex items-start gap-3">
-                      <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${audience.color === 'primary' ? 'bg-primary' : audience.color === 'secondary' ? 'bg-secondary' : 'bg-accent'}`}></div>
-                      <span className="text-sm">{benefit}</span>
-                    </div>)}
-                </div>
+                
 
                 {/* CTA */}
                 <div className="mt-6 pt-4 border-t border-border/20">
@@ -112,12 +96,7 @@ const AudienceSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-12">
-          <Card
-            ref={ctaRef}
-            className={`card-gradient inline-block p-6 max-w-2xl transition-all duration-700 delay-600 ${
-              ctaVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
-            }`}
-          >
+          <Card ref={ctaRef} className={`card-gradient inline-block p-6 max-w-2xl transition-all duration-700 delay-600 ${ctaVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}>
             <h3 className="text-xl font-bold mb-2">Still Not Sure Which Path Is Right?</h3>
             <p className="text-muted-foreground mb-4">
               Join our free demo session and speak directly with our career counselor
