@@ -48,7 +48,7 @@ const AudienceSection = () => {
       <div className="container-wide">
         <div ref={headerRef} className={`text-center mb-12 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Who Can Attend This <span className="text-gradient">Webinar</span>
+            Perfect for Every <span className="text-gradient">Career Stage</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             This webinar is designed for anyone looking to advance their career in tech
