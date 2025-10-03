@@ -39,8 +39,8 @@ const HeroSection = () => {
               }`}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
-                Attend Oracle Fusion SCM{' '}
-                <span className="text-gradient">Demo + 2-Day Free Classes</span>
+                Join Our Free Demo Session for{' '}
+                <span className="text-gradient">"Oracle Fusion SCM!"</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Interactive live training | Preview actual classes | Career-changing decision – with zero risk
