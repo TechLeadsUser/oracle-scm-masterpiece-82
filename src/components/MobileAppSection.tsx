@@ -174,7 +174,7 @@ const MobileAppSection = () => {
                   <a href="https://play.google.com/store/apps/details?id=com.techleadsit.academy_app" target="_blank" rel="noopener noreferrer" className="block hover:opacity-80 transition-opacity">
                     <img src="/src/assets/google-play-badge.png" alt="Get it on Google Play" className="h-12 w-auto mx-auto" />
                   </a>
-                  <a href="#" className="block hover:opacity-80 transition-opacity">
+                  <a href="https://apps.apple.com/in/app/tech-leads-it/id6615066544" target="_blank" rel="noopener noreferrer" className="block hover:opacity-80 transition-opacity">
                     <img src="/src/assets/app-store-badge.png" alt="Download on the App Store" className="h-12 w-auto mx-auto" />
                   </a>
                 </div>
