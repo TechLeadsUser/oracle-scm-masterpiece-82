@@ -137,13 +137,38 @@ const TestimonialsSection = () => {
               <h3 className="text-xl font-bold mb-2">{currentTestimonial.name}</h3>
               
               <div className="space-y-2 text-sm">
-              <div className="flex items-center justify-center gap-2">
+                <div className="flex items-center justify-center gap-2">
                   <MapPin className="h-4 w-4 text-muted-foreground" />
                   <span>{currentTestimonial.location}</span>
                 </div>
                 
                 <Badge className="bg-primary text-primary-foreground">
                   {currentTestimonial.company}
+                </Badge>
+              </div>
+
+              {/* Career Progression */}
+              <div className="mt-6 p-4 bg-gradient-card rounded-xl border border-primary/10">
+                <div className="space-y-3">
+                  <div>
+                    <div className="text-xs text-muted-foreground">Previous Role</div>
+                    <div className="font-medium text-sm">{currentTestimonial.previousRole}</div>
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <TrendingUp className="h-4 w-4 text-success" />
+                  </div>
+                  
+                  <div>
+                    <div className="text-xs text-muted-foreground">Current Role</div>
+                    <div className="font-medium text-sm">{currentTestimonial.currentRole}</div>
+                  </div>
+                </div>
+                
+                <Badge className="mt-3 bg-success text-success-foreground">
+                  {currentTestimonial.salaryIncrease !== 'First Job' 
+                    ? `${currentTestimonial.salaryIncrease} Salary Increase` 
+                    : 'First Job Success'}
                 </Badge>
               </div>
             </div>
@@ -166,44 +191,16 @@ const TestimonialsSection = () => {
                     "{currentTestimonial.testimonial}"
                   </blockquote>
 
-                  {/* Highlights and Career Progression */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {/* Key Success Factors */}
-                    <div>
-                      <h4 className="font-semibold mb-3">Key Success Factors:</h4>
-                      <div className="space-y-2">
-                        {currentTestimonial.highlights.map((highlight, i) => (
-                          <div key={i} className="flex items-center gap-2 text-sm">
-                            <div className="w-2 h-2 bg-success rounded-full"></div>
-                            <span>{highlight}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Career Progression */}
-                    <div className="p-4 bg-gradient-card rounded-xl border border-primary/10">
-                      <div className="space-y-3">
-                        <div>
-                          <div className="text-xs text-muted-foreground">Previous Role</div>
-                          <div className="font-medium text-sm">{currentTestimonial.previousRole}</div>
+                  {/* Highlights */}
+                  <div>
+                    <h4 className="font-semibold mb-3">Key Success Factors:</h4>
+                    <div className="grid md:grid-cols-3 gap-2">
+                      {currentTestimonial.highlights.map((highlight, i) => (
+                        <div key={i} className="flex items-center gap-2 text-sm">
+                          <div className="w-2 h-2 bg-success rounded-full"></div>
+                          <span>{highlight}</span>
                         </div>
-                        
-                        <div className="flex items-center justify-center">
-                          <TrendingUp className="h-4 w-4 text-success" />
-                        </div>
-                        
-                        <div>
-                          <div className="text-xs text-muted-foreground">Current Role</div>
-                          <div className="font-medium text-sm">{currentTestimonial.currentRole}</div>
-                        </div>
-                      </div>
-                      
-                      <Badge className="mt-3 bg-success text-success-foreground">
-                        {currentTestimonial.salaryIncrease !== 'First Job' 
-                          ? `${currentTestimonial.salaryIncrease} Salary Increase` 
-                          : 'First Job Success'}
-                      </Badge>
+                      ))}
                     </div>
                   </div>
                 </div>
