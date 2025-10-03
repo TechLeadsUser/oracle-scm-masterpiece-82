@@ -13,7 +13,7 @@ const TrainerProfile = () => {
     ref: cardRef,
     isIntersecting: cardVisible
   } = useIntersectionObserver();
-  const companies = ['Oracle', 'Capgemini', 'Infosys', 'TCS'];
+  const companies = ['Oracle', 'Wipro'];
   const certifications = ['Oracle Cloud SCM', 'Procurement Cloud', 'Inventory Management', 'Order Management'];
   return <section className="section-padding bg-gradient-to-br from-muted/30 to-background">
       <div className="container-wide">
