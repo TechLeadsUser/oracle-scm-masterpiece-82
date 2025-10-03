@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            The Voice of Our <span className="text-gradient">Learners</span>
+            Achievement of Our <span className="text-gradient">Students</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Real people, real transformations - see how Oracle Fusion SCM training changed their careers
